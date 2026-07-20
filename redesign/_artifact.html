@@ -1,0 +1,1786 @@
+<style>
+:root{--bg:#eef1f6;--fg:#1b1f27;--muted:#5b6472;--panel:#fff;--line:#d7dce6}
+html.dark{--bg:#0d0f14;--fg:#e6e9f0;--muted:#8b93a3;--panel:#14171e;--line:#262b36}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1200px;margin:0 auto;padding:28px 20px 80px}
+header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px}
+h1{font-size:22px;margin:0;letter-spacing:-.02em}.sub{color:var(--muted);font-size:14px;margin:4px 0 0;max-width:70ch}
+.toggle{border:1px solid var(--line);background:var(--panel);color:var(--fg);border-radius:999px;padding:8px 16px;font-size:13px;cursor:pointer;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px;margin-top:26px}
+.cell{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+figcaption{display:flex;justify-content:space-between;padding:10px 14px;font-size:13px;border-bottom:1px solid var(--line)}
+figcaption span{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+iframe{width:100%;height:300px;border:0;display:block;background:transparent}
+.note{color:var(--muted);font-size:13px;line-height:1.6;margin:22px 0 0;max-width:75ch}
+</style>
+<div class="wrap">
+<header><div><h1>Redesign — 12 temas, layouts distintos</h1>
+<p class="sub">Cada tema tem uma ESTRUTURA de HTML própria, não só cor. Renderizados pelo motor real (o verso do cartão). Alterne claro/escuro e compare as estruturas: herói com halo, coluna editorial, página de livro, editor com <code>&lt;pre&gt;</code>, verbete, linha do tempo…</p></div>
+<button class="toggle" id="t">☾ Alternar noturno</button></header>
+<div class="grid">
+<figure class="cell"><figcaption><b>Lumen</b><span>Neutro</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #4f7cff; }
+.card.nightMode, .card.night_mode { --accent: #8fb0ff; }
+.kicker { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px; }
+.prompt { font-size: 1.15em; font-weight: 600; letter-spacing: -.01em; }
+.solution { font-size: 1.05em; background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 20px 22px; margin: 4px auto 0; max-width: 40ch; }
+.aside { margin: 18px auto 0; font-size: .8em; color: var(--muted); line-height: 1.6;
+  border-left: 3px solid var(--accent); padding-left: 14px; text-align: left; max-width: 42ch; }
+</style><div class=&quot;card&quot;><div class=&quot;kicker&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;solution&quot;>Camberra</div><div class=&quot;aside&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" data-dark="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #4f7cff; }
+.card.nightMode, .card.night_mode { --accent: #8fb0ff; }
+.kicker { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px; }
+.prompt { font-size: 1.15em; font-weight: 600; letter-spacing: -.01em; }
+.solution { font-size: 1.05em; background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 20px 22px; margin: 4px auto 0; max-width: 40ch; }
+.aside { margin: 18px auto 0; font-size: .8em; color: var(--muted); line-height: 1.6;
+  border-left: 3px solid var(--accent); padding-left: 14px; text-align: left; max-width: 42ch; }
+</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;kicker&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;solution&quot;>Camberra</div><div class=&quot;aside&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" srcdoc="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #4f7cff; }
+.card.nightMode, .card.night_mode { --accent: #8fb0ff; }
+.kicker { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px; }
+.prompt { font-size: 1.15em; font-weight: 600; letter-spacing: -.01em; }
+.solution { font-size: 1.05em; background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 20px 22px; margin: 4px auto 0; max-width: 40ch; }
+.aside { margin: 18px auto 0; font-size: .8em; color: var(--muted); line-height: 1.6;
+  border-left: 3px solid var(--accent); padding-left: 14px; text-align: left; max-width: 42ch; }
+</style><div class=&quot;card&quot;><div class=&quot;kicker&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;solution&quot;>Camberra</div><div class=&quot;aside&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
+<figure class="cell"><figcaption><b>Aurora</b><span>Vívido</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #b21bb8; }
+.card.nightMode, .card.night_mode { --accent: #f07cf5; }
+.halo { display: inline-block; padding: 6px 10px 24px;
+  background: radial-gradient(closest-side, rgba(178,27,184,.14), transparent 78%); }
+.prompt { font-size: 1.55em; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; color: var(--accent); }
+.glow { position: relative; margin: 4px auto 0; max-width: 40ch; background: var(--surface);
+  border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 16px 44px rgba(178,27,184,.18); overflow: hidden; }
+.glow-bar { height: 5px; background: linear-gradient(90deg, var(--accent), #22d3ee); }
+.solution { padding: 22px 24px; font-size: 1.06em; }
+.aside { margin: 16px auto 0; font-size: .82em; color: var(--muted); max-width: 42ch; }
+</style><div class=&quot;card&quot;><div class=&quot;halo&quot;><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;glow&quot;><div class=&quot;glow-bar&quot;></div><div class=&quot;solution&quot;>Camberra</div></div><div class=&quot;aside&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" data-dark="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #b21bb8; }
+.card.nightMode, .card.night_mode { --accent: #f07cf5; }
+.halo { display: inline-block; padding: 6px 10px 24px;
+  background: radial-gradient(closest-side, rgba(178,27,184,.14), transparent 78%); }
+.prompt { font-size: 1.55em; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; color: var(--accent); }
+.glow { position: relative; margin: 4px auto 0; max-width: 40ch; background: var(--surface);
+  border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 16px 44px rgba(178,27,184,.18); overflow: hidden; }
+.glow-bar { height: 5px; background: linear-gradient(90deg, var(--accent), #22d3ee); }
+.solution { padding: 22px 24px; font-size: 1.06em; }
+.aside { margin: 16px auto 0; font-size: .82em; color: var(--muted); max-width: 42ch; }
+</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;halo&quot;><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;glow&quot;><div class=&quot;glow-bar&quot;></div><div class=&quot;solution&quot;>Camberra</div></div><div class=&quot;aside&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" srcdoc="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #b21bb8; }
+.card.nightMode, .card.night_mode { --accent: #f07cf5; }
+.halo { display: inline-block; padding: 6px 10px 24px;
+  background: radial-gradient(closest-side, rgba(178,27,184,.14), transparent 78%); }
+.prompt { font-size: 1.55em; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; color: var(--accent); }
+.glow { position: relative; margin: 4px auto 0; max-width: 40ch; background: var(--surface);
+  border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 16px 44px rgba(178,27,184,.18); overflow: hidden; }
+.glow-bar { height: 5px; background: linear-gradient(90deg, var(--accent), #22d3ee); }
+.solution { padding: 22px 24px; font-size: 1.06em; }
+.aside { margin: 16px auto 0; font-size: .82em; color: var(--muted); max-width: 42ch; }
+</style><div class=&quot;card&quot;><div class=&quot;halo&quot;><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;glow&quot;><div class=&quot;glow-bar&quot;></div><div class=&quot;solution&quot;>Camberra</div></div><div class=&quot;aside&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
+<figure class="cell"><figcaption><b>Slate</b><span>Editorial</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #0f766e; text-align: left; }
+.card.nightMode, .card.night_mode { --accent: #5eead4; }
+.masthead { border-bottom: 2px solid var(--fg); padding-bottom: 8px; margin-bottom: 18px; }
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+.lead { border-left: 4px solid var(--accent); padding-left: 16px; }
+.prompt { font-size: 1.25em; font-weight: 700; line-height: 1.25; }
+.column { border-left: 4px solid var(--line); padding-left: 16px; margin-top: 4px; }
+.dek { font-size: 1.02em; line-height: 1.6; margin: 0; }
+.margin-note { margin-top: 16px; font-size: .78em; color: var(--muted);
+  border-left: 4px solid var(--accent); padding-left: 16px; }
+</style><div class=&quot;card&quot;><div class=&quot;masthead&quot;><span class=&quot;eyebrow&quot;>PERGUNTA</span></div><div class=&quot;lead&quot;><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;column&quot;><p class=&quot;dek&quot;>Camberra</p></div><div class=&quot;margin-note&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" data-dark="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #0f766e; text-align: left; }
+.card.nightMode, .card.night_mode { --accent: #5eead4; }
+.masthead { border-bottom: 2px solid var(--fg); padding-bottom: 8px; margin-bottom: 18px; }
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+.lead { border-left: 4px solid var(--accent); padding-left: 16px; }
+.prompt { font-size: 1.25em; font-weight: 700; line-height: 1.25; }
+.column { border-left: 4px solid var(--line); padding-left: 16px; margin-top: 4px; }
+.dek { font-size: 1.02em; line-height: 1.6; margin: 0; }
+.margin-note { margin-top: 16px; font-size: .78em; color: var(--muted);
+  border-left: 4px solid var(--accent); padding-left: 16px; }
+</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;masthead&quot;><span class=&quot;eyebrow&quot;>PERGUNTA</span></div><div class=&quot;lead&quot;><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;column&quot;><p class=&quot;dek&quot;>Camberra</p></div><div class=&quot;margin-note&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" srcdoc="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #0f766e; text-align: left; }
+.card.nightMode, .card.night_mode { --accent: #5eead4; }
+.masthead { border-bottom: 2px solid var(--fg); padding-bottom: 8px; margin-bottom: 18px; }
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+.lead { border-left: 4px solid var(--accent); padding-left: 16px; }
+.prompt { font-size: 1.25em; font-weight: 700; line-height: 1.25; }
+.column { border-left: 4px solid var(--line); padding-left: 16px; margin-top: 4px; }
+.dek { font-size: 1.02em; line-height: 1.6; margin: 0; }
+.margin-note { margin-top: 16px; font-size: .78em; color: var(--muted);
+  border-left: 4px solid var(--accent); padding-left: 16px; }
+</style><div class=&quot;card&quot;><div class=&quot;masthead&quot;><span class=&quot;eyebrow&quot;>PERGUNTA</span></div><div class=&quot;lead&quot;><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;column&quot;><p class=&quot;dek&quot;>Camberra</p></div><div class=&quot;margin-note&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
+<figure class="cell"><figcaption><b>Sépia</b><span>Leitura</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --bg: #f4ecd8; --fg: #3a2f22; --surface: #efe4cc; --line: #ddcba6;
+  --accent: #a15c1e; --muted: #6f5f47; --bold: #2a2118;
+  --font: Georgia, &quot;Times New Roman&quot;, serif; text-align: left; }
+.card.nightMode, .card.night_mode { --bg: #211c15; --fg: #e8ddc7; --surface: #2a241b;
+  --line: #3a3125; --accent: #e0975a; --muted: #b6a988; --bold: #f5ecd8; }
+.folio { font-variant: small-caps; letter-spacing: .08em; font-weight: 700; color: var(--muted);
+  margin-bottom: 10px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+.prompt { font-size: 1.5em; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+.passage { font-size: 1.08em; line-height: 1.7; text-indent: 1.4em; text-align: justify; }
+.passage::first-letter { font-size: 2.6em; float: left; line-height: .8; padding: 2px 8px 0 0;
+  color: var(--accent); font-weight: 700; }
+.gloss { margin-top: 16px; font-size: .86em; font-style: italic; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 10px; }
+</style><div class=&quot;card&quot;><div class=&quot;folio&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;passage&quot;>Camberra</div><div class=&quot;gloss&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" data-dark="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --bg: #f4ecd8; --fg: #3a2f22; --surface: #efe4cc; --line: #ddcba6;
+  --accent: #a15c1e; --muted: #6f5f47; --bold: #2a2118;
+  --font: Georgia, &quot;Times New Roman&quot;, serif; text-align: left; }
+.card.nightMode, .card.night_mode { --bg: #211c15; --fg: #e8ddc7; --surface: #2a241b;
+  --line: #3a3125; --accent: #e0975a; --muted: #b6a988; --bold: #f5ecd8; }
+.folio { font-variant: small-caps; letter-spacing: .08em; font-weight: 700; color: var(--muted);
+  margin-bottom: 10px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+.prompt { font-size: 1.5em; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+.passage { font-size: 1.08em; line-height: 1.7; text-indent: 1.4em; text-align: justify; }
+.passage::first-letter { font-size: 2.6em; float: left; line-height: .8; padding: 2px 8px 0 0;
+  color: var(--accent); font-weight: 700; }
+.gloss { margin-top: 16px; font-size: .86em; font-style: italic; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 10px; }
+</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;folio&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;passage&quot;>Camberra</div><div class=&quot;gloss&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" srcdoc="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --bg: #f4ecd8; --fg: #3a2f22; --surface: #efe4cc; --line: #ddcba6;
+  --accent: #a15c1e; --muted: #6f5f47; --bold: #2a2118;
+  --font: Georgia, &quot;Times New Roman&quot;, serif; text-align: left; }
+.card.nightMode, .card.night_mode { --bg: #211c15; --fg: #e8ddc7; --surface: #2a241b;
+  --line: #3a3125; --accent: #e0975a; --muted: #b6a988; --bold: #f5ecd8; }
+.folio { font-variant: small-caps; letter-spacing: .08em; font-weight: 700; color: var(--muted);
+  margin-bottom: 10px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+.prompt { font-size: 1.5em; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+.passage { font-size: 1.08em; line-height: 1.7; text-indent: 1.4em; text-align: justify; }
+.passage::first-letter { font-size: 2.6em; float: left; line-height: .8; padding: 2px 8px 0 0;
+  color: var(--accent); font-weight: 700; }
+.gloss { margin-top: 16px; font-size: .86em; font-style: italic; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 10px; }
+</style><div class=&quot;card&quot;><div class=&quot;folio&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;passage&quot;>Camberra</div><div class=&quot;gloss&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
+<figure class="cell"><figcaption><b>Neon</b><span>Vívido</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --bg: #0a0b12; --fg: #e6f7ff; --surface: #10131f; --line: #222233;
+  --accent: #22d3ee; --muted: #93a4c8; --bold: #ffffff;
+  --font: ui-monospace, &quot;Cascadia Code&quot;, Consolas, monospace; }
+.card.nightMode, .card.night_mode { --bg: #060710; --surface: #0c0f1a; --accent: #45e6ff; }
+.hud { position: relative; border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+  border-radius: 4px; padding: 24px 22px; box-shadow: inset 0 0 24px rgba(34,211,238,.10); }
+.hud::before, .hud::after { content: &quot;&quot;; position: absolute; width: 12px; height: 12px; border: 2px solid var(--accent); }
+.hud::before { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+.hud::after { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+.hud-top { display: flex; justify-content: center; margin-bottom: 14px; }
+.tag { font-size: 11px; letter-spacing: .25em; text-transform: uppercase; color: var(--accent);
+  border: 1px solid var(--accent); border-radius: 999px; padding: 3px 12px; }
+.prompt { font-size: 1.2em; font-weight: 700; text-shadow: 0 0 10px rgba(34,211,238,.35); }
+.panel { margin: 4px auto 0; max-width: 44ch; border-left: 3px solid var(--accent);
+  background: var(--surface); padding: 16px 18px; text-align: left; }
+.readout { font-size: 1.02em; line-height: 1.5; }
+.log { margin-top: 14px; font-size: .8em; color: var(--muted); letter-spacing: .02em; text-align: left; }
+</style><div class=&quot;card&quot;><div class=&quot;hud&quot;><div class=&quot;hud-top&quot;><span class=&quot;tag&quot;>PERGUNTA</span></div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;panel&quot;><div class=&quot;readout&quot;>Camberra</div></div><div class=&quot;log&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" data-dark="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --bg: #0a0b12; --fg: #e6f7ff; --surface: #10131f; --line: #222233;
+  --accent: #22d3ee; --muted: #93a4c8; --bold: #ffffff;
+  --font: ui-monospace, &quot;Cascadia Code&quot;, Consolas, monospace; }
+.card.nightMode, .card.night_mode { --bg: #060710; --surface: #0c0f1a; --accent: #45e6ff; }
+.hud { position: relative; border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+  border-radius: 4px; padding: 24px 22px; box-shadow: inset 0 0 24px rgba(34,211,238,.10); }
+.hud::before, .hud::after { content: &quot;&quot;; position: absolute; width: 12px; height: 12px; border: 2px solid var(--accent); }
+.hud::before { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+.hud::after { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+.hud-top { display: flex; justify-content: center; margin-bottom: 14px; }
+.tag { font-size: 11px; letter-spacing: .25em; text-transform: uppercase; color: var(--accent);
+  border: 1px solid var(--accent); border-radius: 999px; padding: 3px 12px; }
+.prompt { font-size: 1.2em; font-weight: 700; text-shadow: 0 0 10px rgba(34,211,238,.35); }
+.panel { margin: 4px auto 0; max-width: 44ch; border-left: 3px solid var(--accent);
+  background: var(--surface); padding: 16px 18px; text-align: left; }
+.readout { font-size: 1.02em; line-height: 1.5; }
+.log { margin-top: 14px; font-size: .8em; color: var(--muted); letter-spacing: .02em; text-align: left; }
+</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;hud&quot;><div class=&quot;hud-top&quot;><span class=&quot;tag&quot;>PERGUNTA</span></div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;panel&quot;><div class=&quot;readout&quot;>Camberra</div></div><div class=&quot;log&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" srcdoc="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --bg: #0a0b12; --fg: #e6f7ff; --surface: #10131f; --line: #222233;
+  --accent: #22d3ee; --muted: #93a4c8; --bold: #ffffff;
+  --font: ui-monospace, &quot;Cascadia Code&quot;, Consolas, monospace; }
+.card.nightMode, .card.night_mode { --bg: #060710; --surface: #0c0f1a; --accent: #45e6ff; }
+.hud { position: relative; border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+  border-radius: 4px; padding: 24px 22px; box-shadow: inset 0 0 24px rgba(34,211,238,.10); }
+.hud::before, .hud::after { content: &quot;&quot;; position: absolute; width: 12px; height: 12px; border: 2px solid var(--accent); }
+.hud::before { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+.hud::after { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+.hud-top { display: flex; justify-content: center; margin-bottom: 14px; }
+.tag { font-size: 11px; letter-spacing: .25em; text-transform: uppercase; color: var(--accent);
+  border: 1px solid var(--accent); border-radius: 999px; padding: 3px 12px; }
+.prompt { font-size: 1.2em; font-weight: 700; text-shadow: 0 0 10px rgba(34,211,238,.35); }
+.panel { margin: 4px auto 0; max-width: 44ch; border-left: 3px solid var(--accent);
+  background: var(--surface); padding: 16px 18px; text-align: left; }
+.readout { font-size: 1.02em; line-height: 1.5; }
+.log { margin-top: 14px; font-size: .8em; color: var(--muted); letter-spacing: .02em; text-align: left; }
+</style><div class=&quot;card&quot;><div class=&quot;hud&quot;><div class=&quot;hud-top&quot;><span class=&quot;tag&quot;>PERGUNTA</span></div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;panel&quot;><div class=&quot;readout&quot;>Camberra</div></div><div class=&quot;log&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
+<figure class="cell"><figcaption><b>Papel</b><span>Leitura</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --bg: #f7f2e7; --fg: #33302b; --surface: #fbf7ee; --line: #e2d9c4;
+  --accent: #b23b34; --muted: #6d6552; --bold: #211f1b;
+  --font: &quot;Iowan Old Style&quot;, Palatino, Georgia, serif; text-align: left; }
+.card.nightMode, .card.night_mode { --bg: #1b1915; --fg: #ece5d5; --surface: #232019;
+  --line: #3a3428; --accent: #e07a72; --muted: #a99e88; --bold: #f4efe4; }
+.sheet { background: var(--surface); border: 1px solid var(--line); border-left: 2px solid var(--accent);
+  border-radius: 3px; box-shadow: 0 2px 0 var(--line), 0 10px 24px rgba(0,0,0,.06); padding: 20px 24px; }
+.tab { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); background: var(--bg); border: 1px solid var(--line); border-bottom: none;
+  border-radius: 4px 4px 0 0; padding: 4px 12px; margin-bottom: 10px; }
+.prompt { font-size: 1.3em; font-weight: 700; line-height: 1.35; }
+.ruled { margin: 6px auto 0; max-width: 46ch; font-size: 1.05em; line-height: 30px; padding-top: 1px;
+  background-image: repeating-linear-gradient(var(--bg) 0 29px, var(--line) 29px 30px); }
+.pin { margin-top: 16px; font-size: .82em; font-style: italic; color: var(--muted); }
+</style><div class=&quot;card&quot;><div class=&quot;sheet&quot;><div class=&quot;tab&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;ruled&quot;>Camberra</div><div class=&quot;pin&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" data-dark="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --bg: #f7f2e7; --fg: #33302b; --surface: #fbf7ee; --line: #e2d9c4;
+  --accent: #b23b34; --muted: #6d6552; --bold: #211f1b;
+  --font: &quot;Iowan Old Style&quot;, Palatino, Georgia, serif; text-align: left; }
+.card.nightMode, .card.night_mode { --bg: #1b1915; --fg: #ece5d5; --surface: #232019;
+  --line: #3a3428; --accent: #e07a72; --muted: #a99e88; --bold: #f4efe4; }
+.sheet { background: var(--surface); border: 1px solid var(--line); border-left: 2px solid var(--accent);
+  border-radius: 3px; box-shadow: 0 2px 0 var(--line), 0 10px 24px rgba(0,0,0,.06); padding: 20px 24px; }
+.tab { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); background: var(--bg); border: 1px solid var(--line); border-bottom: none;
+  border-radius: 4px 4px 0 0; padding: 4px 12px; margin-bottom: 10px; }
+.prompt { font-size: 1.3em; font-weight: 700; line-height: 1.35; }
+.ruled { margin: 6px auto 0; max-width: 46ch; font-size: 1.05em; line-height: 30px; padding-top: 1px;
+  background-image: repeating-linear-gradient(var(--bg) 0 29px, var(--line) 29px 30px); }
+.pin { margin-top: 16px; font-size: .82em; font-style: italic; color: var(--muted); }
+</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;sheet&quot;><div class=&quot;tab&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;ruled&quot;>Camberra</div><div class=&quot;pin&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" srcdoc="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --bg: #f7f2e7; --fg: #33302b; --surface: #fbf7ee; --line: #e2d9c4;
+  --accent: #b23b34; --muted: #6d6552; --bold: #211f1b;
+  --font: &quot;Iowan Old Style&quot;, Palatino, Georgia, serif; text-align: left; }
+.card.nightMode, .card.night_mode { --bg: #1b1915; --fg: #ece5d5; --surface: #232019;
+  --line: #3a3428; --accent: #e07a72; --muted: #a99e88; --bold: #f4efe4; }
+.sheet { background: var(--surface); border: 1px solid var(--line); border-left: 2px solid var(--accent);
+  border-radius: 3px; box-shadow: 0 2px 0 var(--line), 0 10px 24px rgba(0,0,0,.06); padding: 20px 24px; }
+.tab { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); background: var(--bg); border: 1px solid var(--line); border-bottom: none;
+  border-radius: 4px 4px 0 0; padding: 4px 12px; margin-bottom: 10px; }
+.prompt { font-size: 1.3em; font-weight: 700; line-height: 1.35; }
+.ruled { margin: 6px auto 0; max-width: 46ch; font-size: 1.05em; line-height: 30px; padding-top: 1px;
+  background-image: repeating-linear-gradient(var(--bg) 0 29px, var(--line) 29px 30px); }
+.pin { margin-top: 16px; font-size: .82em; font-style: italic; color: var(--muted); }
+</style><div class=&quot;card&quot;><div class=&quot;sheet&quot;><div class=&quot;tab&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;ruled&quot;>Camberra</div><div class=&quot;pin&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
+<figure class="cell"><figcaption><b>Névoa</b><span>Sereno</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #6a75c4; --surface: #eef0f7; --line: #e6e9f2; }
+.card.nightMode, .card.night_mode { --accent: #aab3e0; --surface: #191c26; --line: #262b3a; }
+.whisper { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 22px; }
+.prompt { font-size: 1.2em; font-weight: 500; line-height: 1.5; }
+.cloud { margin: 8px auto 0; max-width: 40ch; background: var(--surface); border-radius: 26px;
+  padding: 26px 30px; box-shadow: 0 10px 40px rgba(106,117,196,.14); }
+.drift { margin: 18px auto 0; font-size: .82em; color: var(--muted); max-width: 40ch; }
+</style><div class=&quot;card&quot;><div class=&quot;whisper&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;cloud&quot;>Camberra</div><div class=&quot;drift&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" data-dark="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #6a75c4; --surface: #eef0f7; --line: #e6e9f2; }
+.card.nightMode, .card.night_mode { --accent: #aab3e0; --surface: #191c26; --line: #262b3a; }
+.whisper { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 22px; }
+.prompt { font-size: 1.2em; font-weight: 500; line-height: 1.5; }
+.cloud { margin: 8px auto 0; max-width: 40ch; background: var(--surface); border-radius: 26px;
+  padding: 26px 30px; box-shadow: 0 10px 40px rgba(106,117,196,.14); }
+.drift { margin: 18px auto 0; font-size: .82em; color: var(--muted); max-width: 40ch; }
+</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;whisper&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;cloud&quot;>Camberra</div><div class=&quot;drift&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" srcdoc="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #6a75c4; --surface: #eef0f7; --line: #e6e9f2; }
+.card.nightMode, .card.night_mode { --accent: #aab3e0; --surface: #191c26; --line: #262b3a; }
+.whisper { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 22px; }
+.prompt { font-size: 1.2em; font-weight: 500; line-height: 1.5; }
+.cloud { margin: 8px auto 0; max-width: 40ch; background: var(--surface); border-radius: 26px;
+  padding: 26px 30px; box-shadow: 0 10px 40px rgba(106,117,196,.14); }
+.drift { margin: 18px auto 0; font-size: .82em; color: var(--muted); max-width: 40ch; }
+</style><div class=&quot;card&quot;><div class=&quot;whisper&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;cloud&quot;>Camberra</div><div class=&quot;drift&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
+<figure class="cell"><figcaption><b>Contraste AAA</b><span>Acessível</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --bg: #ffffff; --fg: #000000; --surface: #ffffff; --line: #000000;
+  --accent: #0b3fae; --muted: #000000; --bold: #000000; --fs: 24px; }
+.card.nightMode, .card.night_mode { --bg: #000000; --fg: #ffffff; --surface: #000000;
+  --line: #ffffff; --accent: #7fb0ff; --muted: #ffffff; --bold: #ffffff; }
+.band { display: block; background: var(--fg); color: var(--bg); font-weight: 800; font-size: .8em;
+  letter-spacing: .06em; text-transform: uppercase; padding: 8px 14px; border-radius: 4px; margin-bottom: 12px; }
+.answerband { background: var(--accent); }
+.prompt { font-size: 1.3em; font-weight: 800; line-height: 1.3; margin-bottom: 22px; }
+.solution { font-size: 1.25em; font-weight: 700; border: 3px solid var(--line); border-radius: 6px;
+  padding: 18px 20px; margin: 0 auto; max-width: 40ch; }
+.note { margin-top: 18px; font-weight: 600; border: 2px dashed var(--line); padding: 12px 14px; }
+</style><div class=&quot;card&quot;><div class=&quot;band&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;band answerband&quot;>RESPOSTA</div><div class=&quot;solution&quot;>Camberra</div><div class=&quot;note&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" data-dark="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --bg: #ffffff; --fg: #000000; --surface: #ffffff; --line: #000000;
+  --accent: #0b3fae; --muted: #000000; --bold: #000000; --fs: 24px; }
+.card.nightMode, .card.night_mode { --bg: #000000; --fg: #ffffff; --surface: #000000;
+  --line: #ffffff; --accent: #7fb0ff; --muted: #ffffff; --bold: #ffffff; }
+.band { display: block; background: var(--fg); color: var(--bg); font-weight: 800; font-size: .8em;
+  letter-spacing: .06em; text-transform: uppercase; padding: 8px 14px; border-radius: 4px; margin-bottom: 12px; }
+.answerband { background: var(--accent); }
+.prompt { font-size: 1.3em; font-weight: 800; line-height: 1.3; margin-bottom: 22px; }
+.solution { font-size: 1.25em; font-weight: 700; border: 3px solid var(--line); border-radius: 6px;
+  padding: 18px 20px; margin: 0 auto; max-width: 40ch; }
+.note { margin-top: 18px; font-weight: 600; border: 2px dashed var(--line); padding: 12px 14px; }
+</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;band&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;band answerband&quot;>RESPOSTA</div><div class=&quot;solution&quot;>Camberra</div><div class=&quot;note&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" srcdoc="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --bg: #ffffff; --fg: #000000; --surface: #ffffff; --line: #000000;
+  --accent: #0b3fae; --muted: #000000; --bold: #000000; --fs: 24px; }
+.card.nightMode, .card.night_mode { --bg: #000000; --fg: #ffffff; --surface: #000000;
+  --line: #ffffff; --accent: #7fb0ff; --muted: #ffffff; --bold: #ffffff; }
+.band { display: block; background: var(--fg); color: var(--bg); font-weight: 800; font-size: .8em;
+  letter-spacing: .06em; text-transform: uppercase; padding: 8px 14px; border-radius: 4px; margin-bottom: 12px; }
+.answerband { background: var(--accent); }
+.prompt { font-size: 1.3em; font-weight: 800; line-height: 1.3; margin-bottom: 22px; }
+.solution { font-size: 1.25em; font-weight: 700; border: 3px solid var(--line); border-radius: 6px;
+  padding: 18px 20px; margin: 0 auto; max-width: 40ch; }
+.note { margin-top: 18px; font-weight: 600; border: 2px dashed var(--line); padding: 12px 14px; }
+</style><div class=&quot;card&quot;><div class=&quot;band&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;band answerband&quot;>RESPOSTA</div><div class=&quot;solution&quot;>Camberra</div><div class=&quot;note&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
+<figure class="cell"><figcaption><b>Código</b><span>Conteúdo</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --bg: #0f1420; --fg: #d7e2f2; --surface: #0b1019; --line: #24304a;
+  --accent: #6cc7ff; --muted: #8ea3c6; --bold: #ffffff;
+  --font: ui-monospace, &quot;Cascadia Code&quot;, &quot;JetBrains Mono&quot;, Consolas, monospace; }
+.card.nightMode, .card.night_mode { --bg: #090d15; --surface: #070b12; --accent: #8fd6ff; }
+.win { margin: 0 auto; max-width: 54ch; text-align: left; border: 1px solid var(--line);
+  border-radius: 10px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,.35); }
+.titlebar { display: flex; align-items: center; background: var(--line); padding: 9px 12px; }
+.dot { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57;
+  box-shadow: 18px 0 #febc2e, 36px 0 #28c840; }
+.fname { margin-left: 46px; font-size: 12px; color: var(--muted); letter-spacing: .04em; }
+.prompt { padding: 16px 18px; font-size: 1.02em; font-weight: 600; background: var(--bg); }
+.code { margin: 0; padding: 16px 18px; font-size: .98em; line-height: 1.55; background: var(--bg);
+  white-space: pre-wrap; word-break: break-word; }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 12px; }
+.chip { font-size: 11px; color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--line));
+  border-radius: 999px; padding: 3px 10px; }
+</style><div class=&quot;card&quot;><div class=&quot;win&quot;><div class=&quot;titlebar&quot;><span class=&quot;dot&quot;></span><span class=&quot;fname&quot;>PERGUNTA</span></div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;win&quot;><div class=&quot;titlebar&quot;><span class=&quot;dot&quot;></span><span class=&quot;fname&quot;>RESPOSTA</span></div><pre class=&quot;code&quot;>Camberra</pre></div><div class=&quot;chips&quot;><span class=&quot;chip&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</span></div></div>" data-dark="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --bg: #0f1420; --fg: #d7e2f2; --surface: #0b1019; --line: #24304a;
+  --accent: #6cc7ff; --muted: #8ea3c6; --bold: #ffffff;
+  --font: ui-monospace, &quot;Cascadia Code&quot;, &quot;JetBrains Mono&quot;, Consolas, monospace; }
+.card.nightMode, .card.night_mode { --bg: #090d15; --surface: #070b12; --accent: #8fd6ff; }
+.win { margin: 0 auto; max-width: 54ch; text-align: left; border: 1px solid var(--line);
+  border-radius: 10px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,.35); }
+.titlebar { display: flex; align-items: center; background: var(--line); padding: 9px 12px; }
+.dot { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57;
+  box-shadow: 18px 0 #febc2e, 36px 0 #28c840; }
+.fname { margin-left: 46px; font-size: 12px; color: var(--muted); letter-spacing: .04em; }
+.prompt { padding: 16px 18px; font-size: 1.02em; font-weight: 600; background: var(--bg); }
+.code { margin: 0; padding: 16px 18px; font-size: .98em; line-height: 1.55; background: var(--bg);
+  white-space: pre-wrap; word-break: break-word; }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 12px; }
+.chip { font-size: 11px; color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--line));
+  border-radius: 999px; padding: 3px 10px; }
+</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;win&quot;><div class=&quot;titlebar&quot;><span class=&quot;dot&quot;></span><span class=&quot;fname&quot;>PERGUNTA</span></div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;win&quot;><div class=&quot;titlebar&quot;><span class=&quot;dot&quot;></span><span class=&quot;fname&quot;>RESPOSTA</span></div><pre class=&quot;code&quot;>Camberra</pre></div><div class=&quot;chips&quot;><span class=&quot;chip&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</span></div></div>" srcdoc="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --bg: #0f1420; --fg: #d7e2f2; --surface: #0b1019; --line: #24304a;
+  --accent: #6cc7ff; --muted: #8ea3c6; --bold: #ffffff;
+  --font: ui-monospace, &quot;Cascadia Code&quot;, &quot;JetBrains Mono&quot;, Consolas, monospace; }
+.card.nightMode, .card.night_mode { --bg: #090d15; --surface: #070b12; --accent: #8fd6ff; }
+.win { margin: 0 auto; max-width: 54ch; text-align: left; border: 1px solid var(--line);
+  border-radius: 10px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,.35); }
+.titlebar { display: flex; align-items: center; background: var(--line); padding: 9px 12px; }
+.dot { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57;
+  box-shadow: 18px 0 #febc2e, 36px 0 #28c840; }
+.fname { margin-left: 46px; font-size: 12px; color: var(--muted); letter-spacing: .04em; }
+.prompt { padding: 16px 18px; font-size: 1.02em; font-weight: 600; background: var(--bg); }
+.code { margin: 0; padding: 16px 18px; font-size: .98em; line-height: 1.55; background: var(--bg);
+  white-space: pre-wrap; word-break: break-word; }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 12px; }
+.chip { font-size: 11px; color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--line));
+  border-radius: 999px; padding: 3px 10px; }
+</style><div class=&quot;card&quot;><div class=&quot;win&quot;><div class=&quot;titlebar&quot;><span class=&quot;dot&quot;></span><span class=&quot;fname&quot;>PERGUNTA</span></div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;win&quot;><div class=&quot;titlebar&quot;><span class=&quot;dot&quot;></span><span class=&quot;fname&quot;>RESPOSTA</span></div><pre class=&quot;code&quot;>Camberra</pre></div><div class=&quot;chips&quot;><span class=&quot;chip&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</span></div></div>"></iframe></figure>
+<figure class="cell"><figcaption><b>Fórmula</b><span>Conteúdo</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #7c3aed; --font: &quot;STIX Two Text&quot;, &quot;Cambria Math&quot;, Georgia, serif; }
+.card.nightMode, .card.night_mode { --accent: #c4a5f7; }
+.prompt { font-size: 1.2em; line-height: 1.5; }
+.display { font-size: 1.7em; line-height: 1.4; padding: 24px 20px; margin: 0 auto; max-width: 30ch;
+  border-top: 2px solid var(--line); border-bottom: 2px solid var(--line); }
+.expr { font-style: italic; color: var(--fg); }
+.where { margin: 18px auto 0; max-width: 38ch; text-align: left; }
+.where-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.vars { margin: 8px 0 0; }
+.row { display: flex; gap: 12px; padding: 4px 0; border-bottom: 1px dotted var(--line); }
+.sym { margin: 0; min-width: 1.8em; color: var(--accent); font-weight: 700; }
+.sym::before { content: &quot;\25B8&quot;; }
+.def { margin: 0; color: var(--fg); }
+</style><div class=&quot;card&quot;><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;display&quot;><span class=&quot;expr&quot;>Camberra</span></div><div class=&quot;where&quot;><span class=&quot;where-label&quot;>RESPOSTA</span><dl class=&quot;vars&quot;><div class=&quot;row&quot;><dt class=&quot;sym&quot;></dt><dd class=&quot;def&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</dd></div></dl></div></div>" data-dark="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #7c3aed; --font: &quot;STIX Two Text&quot;, &quot;Cambria Math&quot;, Georgia, serif; }
+.card.nightMode, .card.night_mode { --accent: #c4a5f7; }
+.prompt { font-size: 1.2em; line-height: 1.5; }
+.display { font-size: 1.7em; line-height: 1.4; padding: 24px 20px; margin: 0 auto; max-width: 30ch;
+  border-top: 2px solid var(--line); border-bottom: 2px solid var(--line); }
+.expr { font-style: italic; color: var(--fg); }
+.where { margin: 18px auto 0; max-width: 38ch; text-align: left; }
+.where-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.vars { margin: 8px 0 0; }
+.row { display: flex; gap: 12px; padding: 4px 0; border-bottom: 1px dotted var(--line); }
+.sym { margin: 0; min-width: 1.8em; color: var(--accent); font-weight: 700; }
+.sym::before { content: &quot;\25B8&quot;; }
+.def { margin: 0; color: var(--fg); }
+</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;display&quot;><span class=&quot;expr&quot;>Camberra</span></div><div class=&quot;where&quot;><span class=&quot;where-label&quot;>RESPOSTA</span><dl class=&quot;vars&quot;><div class=&quot;row&quot;><dt class=&quot;sym&quot;></dt><dd class=&quot;def&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</dd></div></dl></div></div>" srcdoc="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #7c3aed; --font: &quot;STIX Two Text&quot;, &quot;Cambria Math&quot;, Georgia, serif; }
+.card.nightMode, .card.night_mode { --accent: #c4a5f7; }
+.prompt { font-size: 1.2em; line-height: 1.5; }
+.display { font-size: 1.7em; line-height: 1.4; padding: 24px 20px; margin: 0 auto; max-width: 30ch;
+  border-top: 2px solid var(--line); border-bottom: 2px solid var(--line); }
+.expr { font-style: italic; color: var(--fg); }
+.where { margin: 18px auto 0; max-width: 38ch; text-align: left; }
+.where-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.vars { margin: 8px 0 0; }
+.row { display: flex; gap: 12px; padding: 4px 0; border-bottom: 1px dotted var(--line); }
+.sym { margin: 0; min-width: 1.8em; color: var(--accent); font-weight: 700; }
+.sym::before { content: &quot;\25B8&quot;; }
+.def { margin: 0; color: var(--fg); }
+</style><div class=&quot;card&quot;><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;display&quot;><span class=&quot;expr&quot;>Camberra</span></div><div class=&quot;where&quot;><span class=&quot;where-label&quot;>RESPOSTA</span><dl class=&quot;vars&quot;><div class=&quot;row&quot;><dt class=&quot;sym&quot;></dt><dd class=&quot;def&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</dd></div></dl></div></div>"></iframe></figure>
+<figure class="cell"><figcaption><b>Vocabulário</b><span>Conteúdo</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #c01d63; }
+.card.nightMode, .card.night_mode { --accent: #ff77ac; }
+.entry { text-align: left; max-width: 44ch; margin: 0 auto; }
+.prompt { font-size: 1.9em; font-weight: 800; letter-spacing: -.02em; }
+.phon-row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.ipa { font-size: 1.05em; color: var(--muted); font-family: Georgia, &quot;Times New Roman&quot;, serif; }
+.pos { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--bg); background: var(--accent); border-radius: 6px; padding: 2px 8px; }
+.sense { display: flex; gap: 10px; text-align: left; max-width: 44ch; margin: 18px auto 0;
+  font-size: 1.08em; line-height: 1.5; }
+.sense-num { color: var(--accent); font-weight: 800; }
+.def { flex: 1; }
+.usage { text-align: left; max-width: 44ch; margin: 12px auto 0; padding-left: 14px;
+  border-left: 3px solid var(--accent); font-style: italic; color: var(--muted); }
+.etym { text-align: left; max-width: 44ch; margin: 14px auto 0; font-size: .82em; color: var(--muted); }
+</style><div class=&quot;card&quot;><div class=&quot;entry&quot;><div class=&quot;prompt&quot;>serendipity</div><div class=&quot;phon-row&quot;><span class=&quot;ipa&quot;>/ˌsɛrənˈdɪpɪti/</span></div></div><hr id=answer><div class=&quot;sense&quot;><span class=&quot;sense-num&quot;>1</span><span class=&quot;def&quot;></span></div><div class=&quot;usage&quot;>Encontrar aquele café foi pura serendipity.</div></div>" data-dark="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #c01d63; }
+.card.nightMode, .card.night_mode { --accent: #ff77ac; }
+.entry { text-align: left; max-width: 44ch; margin: 0 auto; }
+.prompt { font-size: 1.9em; font-weight: 800; letter-spacing: -.02em; }
+.phon-row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.ipa { font-size: 1.05em; color: var(--muted); font-family: Georgia, &quot;Times New Roman&quot;, serif; }
+.pos { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--bg); background: var(--accent); border-radius: 6px; padding: 2px 8px; }
+.sense { display: flex; gap: 10px; text-align: left; max-width: 44ch; margin: 18px auto 0;
+  font-size: 1.08em; line-height: 1.5; }
+.sense-num { color: var(--accent); font-weight: 800; }
+.def { flex: 1; }
+.usage { text-align: left; max-width: 44ch; margin: 12px auto 0; padding-left: 14px;
+  border-left: 3px solid var(--accent); font-style: italic; color: var(--muted); }
+.etym { text-align: left; max-width: 44ch; margin: 14px auto 0; font-size: .82em; color: var(--muted); }
+</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;entry&quot;><div class=&quot;prompt&quot;>serendipity</div><div class=&quot;phon-row&quot;><span class=&quot;ipa&quot;>/ˌsɛrənˈdɪpɪti/</span></div></div><hr id=answer><div class=&quot;sense&quot;><span class=&quot;sense-num&quot;>1</span><span class=&quot;def&quot;></span></div><div class=&quot;usage&quot;>Encontrar aquele café foi pura serendipity.</div></div>" srcdoc="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #c01d63; }
+.card.nightMode, .card.night_mode { --accent: #ff77ac; }
+.entry { text-align: left; max-width: 44ch; margin: 0 auto; }
+.prompt { font-size: 1.9em; font-weight: 800; letter-spacing: -.02em; }
+.phon-row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.ipa { font-size: 1.05em; color: var(--muted); font-family: Georgia, &quot;Times New Roman&quot;, serif; }
+.pos { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--bg); background: var(--accent); border-radius: 6px; padding: 2px 8px; }
+.sense { display: flex; gap: 10px; text-align: left; max-width: 44ch; margin: 18px auto 0;
+  font-size: 1.08em; line-height: 1.5; }
+.sense-num { color: var(--accent); font-weight: 800; }
+.def { flex: 1; }
+.usage { text-align: left; max-width: 44ch; margin: 12px auto 0; padding-left: 14px;
+  border-left: 3px solid var(--accent); font-style: italic; color: var(--muted); }
+.etym { text-align: left; max-width: 44ch; margin: 14px auto 0; font-size: .82em; color: var(--muted); }
+</style><div class=&quot;card&quot;><div class=&quot;entry&quot;><div class=&quot;prompt&quot;>serendipity</div><div class=&quot;phon-row&quot;><span class=&quot;ipa&quot;>/ˌsɛrənˈdɪpɪti/</span></div></div><hr id=answer><div class=&quot;sense&quot;><span class=&quot;sense-num&quot;>1</span><span class=&quot;def&quot;></span></div><div class=&quot;usage&quot;>Encontrar aquele café foi pura serendipity.</div></div>"></iframe></figure>
+<figure class="cell"><figcaption><b>Linha do tempo</b><span>Conteúdo</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #0c7a7a; text-align: left; }
+.card.nightMode, .card.night_mode { --accent: #4fd6d6; }
+.track { position: relative; max-width: 46ch; margin: 0 auto; padding-left: 8px; }
+.node { position: relative; padding-left: 26px; padding-bottom: 10px; border-left: 2px solid var(--line); }
+.node:last-child { border-left-color: transparent; }
+.dot { position: absolute; left: -7px; top: 4px; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 0 3px var(--bg); }
+.when { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.prompt { font-size: 1.2em; font-weight: 700; line-height: 1.3; }
+.detail { font-size: 1.02em; line-height: 1.55; }
+.sub { margin-top: 4px; }
+.sub .detail { color: var(--muted); font-size: .92em; }
+</style><div class=&quot;card&quot;><div class=&quot;track&quot;><div class=&quot;node&quot;><span class=&quot;dot&quot;></span><span class=&quot;when&quot;>1989</span><div class=&quot;prompt&quot;>Queda do Muro de Berlim</div></div></div><hr id=answer><div class=&quot;track&quot;><div class=&quot;node&quot;><span class=&quot;dot&quot;></span><div class=&quot;detail&quot;></div></div></div></div>" data-dark="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #0c7a7a; text-align: left; }
+.card.nightMode, .card.night_mode { --accent: #4fd6d6; }
+.track { position: relative; max-width: 46ch; margin: 0 auto; padding-left: 8px; }
+.node { position: relative; padding-left: 26px; padding-bottom: 10px; border-left: 2px solid var(--line); }
+.node:last-child { border-left-color: transparent; }
+.dot { position: absolute; left: -7px; top: 4px; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 0 3px var(--bg); }
+.when { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.prompt { font-size: 1.2em; font-weight: 700; line-height: 1.3; }
+.detail { font-size: 1.02em; line-height: 1.55; }
+.sub { margin-top: 4px; }
+.sub .detail { color: var(--muted); font-size: .92em; }
+</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;track&quot;><div class=&quot;node&quot;><span class=&quot;dot&quot;></span><span class=&quot;when&quot;>1989</span><div class=&quot;prompt&quot;>Queda do Muro de Berlim</div></div></div><hr id=answer><div class=&quot;track&quot;><div class=&quot;node&quot;><span class=&quot;dot&quot;></span><div class=&quot;detail&quot;></div></div></div></div>" srcdoc="<style>body{margin:0}.card {
+  --fg: #1c2029; --bg: #ffffff;
+  --muted: #5b6472; --accent: #3b6ef5;
+  --surface: #f5f7fb; --line: #e4e8f0;
+  --bold: #0f1420; --radius: 16px;
+  --pad: clamp(20px, 5vw, 40px);
+  --fs: 21px;
+  font-family: var(--font, -apple-system, &quot;Segoe UI&quot;, Roboto, system-ui, sans-serif);
+  font-size: var(--fs);
+  line-height: 1.5;
+  color: var(--fg);
+  background: var(--bg);
+  text-align: center;
+  padding: var(--pad);
+  box-sizing: border-box;
+}
+/* modo noturno: seletor COMPOSTO. O Anki poe as classes card e nightMode no
+   mesmo body, entao um combinador descendente nunca casaria. */
+.card.nightMode, .card.night_mode {
+  --fg: #e7ebf3; --bg: #0e1016;
+  --muted: #9aa3b4; --accent: #7aa2ff;
+  --surface: #171a22; --line: #262b37;
+  --bold: #f2f5fb;
+}
+.cloze { font-weight: 700; color: var(--accent); }
+.card b, .card strong { color: var(--bold); }
+.card i, .card em { color: var(--fg); }
+.card u { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; border-radius: 8px; }
+hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 0; }
+@media (max-width: 420px) {
+  .card { --fs: 19px; --pad: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card * { animation: none !important; transition: none !important; }
+}
+.card { --accent: #0c7a7a; text-align: left; }
+.card.nightMode, .card.night_mode { --accent: #4fd6d6; }
+.track { position: relative; max-width: 46ch; margin: 0 auto; padding-left: 8px; }
+.node { position: relative; padding-left: 26px; padding-bottom: 10px; border-left: 2px solid var(--line); }
+.node:last-child { border-left-color: transparent; }
+.dot { position: absolute; left: -7px; top: 4px; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 0 3px var(--bg); }
+.when { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.prompt { font-size: 1.2em; font-weight: 700; line-height: 1.3; }
+.detail { font-size: 1.02em; line-height: 1.55; }
+.sub { margin-top: 4px; }
+.sub .detail { color: var(--muted); font-size: .92em; }
+</style><div class=&quot;card&quot;><div class=&quot;track&quot;><div class=&quot;node&quot;><span class=&quot;dot&quot;></span><span class=&quot;when&quot;>1989</span><div class=&quot;prompt&quot;>Queda do Muro de Berlim</div></div></div><hr id=answer><div class=&quot;track&quot;><div class=&quot;node&quot;><span class=&quot;dot&quot;></span><div class=&quot;detail&quot;></div></div></div></div>"></iframe></figure>
+</div>
+<p class="note">Todos offline, com modo noturno pelo seletor composto <code>.card.nightMode</code>, e cada um aplica de fato suas próprias classes (a cobertura B4 dos 12 é 100%, verificada em Anki real). Esta página é gerada a partir do código, não desenhada à mão — é o que o add-on produz.</p>
+</div>
+<script>
+document.getElementById('t').addEventListener('click',function(){
+ var d=document.documentElement.classList.toggle('dark');
+ document.querySelectorAll('iframe').forEach(function(f){f.srcdoc=d?f.dataset.dark:f.dataset.light});
+ this.textContent=d?'☀ Alternar diurno':'☾ Alternar noturno';
+});
+if(matchMedia('(prefers-color-scheme: dark)').matches)document.getElementById('t').click();
+</script>
