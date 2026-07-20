@@ -13,8 +13,10 @@ A suíte reúne dois módulos em uma única extensão:
   métricas alinhadas ao FSRS.
 
 Os módulos compartilham o mesmo núcleo de segurança, busca, internacionalização
-e leitura do agendador. O pacote público será liberado quando os gates finais de
-migração, tradução e QA visual forem concluídos.
+e leitura do agendador. O desenvolvimento da v3.0.0 está concluído: migração
+opt-in com diff e backup, tradução da interface, exportação Mermaid e QA visual
+estático já passaram. A publicação no AnkiWeb aguarda a aceitação do proprietário
+dentro do Anki e a escolha de qual ID legado representará a suíte unificada.
 
 ## Site
 
