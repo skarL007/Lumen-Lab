@@ -1,3 +1,11 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Anki Studio Suite — showcase dos 12 temas</title>
 <style>
 :root{--bg:#eef1f6;--fg:#1b1f27;--muted:#5b6472;--panel:#fff;--line:#d7dce6}
 html.dark{--bg:#0d0f14;--fg:#e6e9f0;--muted:#8b93a3;--panel:#14171e;--line:#262b36}
@@ -5,20 +13,23 @@ html.dark{--bg:#0d0f14;--fg:#e6e9f0;--muted:#8b93a3;--panel:#14171e;--line:#262b
 .wrap{max-width:1200px;margin:0 auto;padding:28px 20px 80px}
 header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px}
 h1{font-size:22px;margin:0;letter-spacing:-.02em}.sub{color:var(--muted);font-size:14px;margin:4px 0 0;max-width:70ch}
-.toggle{border:1px solid var(--line);background:var(--panel);color:var(--fg);border-radius:999px;padding:8px 16px;font-size:13px;cursor:pointer;font-weight:600}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px;margin-top:26px}
+.toggle{border:1px solid var(--line);background:var(--panel);color:var(--fg);border-radius:999px;min-height:44px;padding:8px 16px;font-size:13px;cursor:pointer;font-weight:600}
+.toggle:focus-visible{outline:3px solid #4f7cff;outline-offset:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:18px;margin-top:26px}
 .cell{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
 figcaption{display:flex;justify-content:space-between;padding:10px 14px;font-size:13px;border-bottom:1px solid var(--line)}
 figcaption span{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
-iframe{width:100%;height:300px;border:0;display:block;background:transparent}
+iframe{width:100%;height:420px;border:0;display:block;background:transparent}
 .note{color:var(--muted);font-size:13px;line-height:1.6;margin:22px 0 0;max-width:75ch}
 </style>
+</head>
+<body>
 <div class="wrap">
 <header><div><h1>Redesign — 12 temas, layouts distintos</h1>
 <p class="sub">Cada tema tem uma ESTRUTURA de HTML própria, não só cor. Renderizados pelo motor real (o verso do cartão). Alterne claro/escuro e compare as estruturas: herói com halo, coluna editorial, página de livro, editor com <code>&lt;pre&gt;</code>, verbete, linha do tempo…</p></div>
-<button class="toggle" id="t">☾ Alternar noturno</button></header>
+<button class="toggle" id="t">Ver modo noturno</button></header>
 <div class="grid">
-<figure class="cell"><figcaption><b>Lumen</b><span>Neutro</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+<figure class="cell"><figcaption><b>Lumen</b><span>Neutro</span></figcaption><iframe title="Prévia do tema Lumen" loading="lazy" data-light="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -154,7 +165,7 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
 .aside { margin: 18px auto 0; font-size: .8em; color: var(--muted); line-height: 1.6;
   border-left: 3px solid var(--accent); padding-left: 14px; text-align: left; max-width: 42ch; }
 </style><div class=&quot;card&quot;><div class=&quot;kicker&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;solution&quot;>Camberra</div><div class=&quot;aside&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
-<figure class="cell"><figcaption><b>Aurora</b><span>Vívido</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+<figure class="cell"><figcaption><b>Aurora</b><span>Vívido</span></figcaption><iframe title="Prévia do tema Aurora" loading="lazy" data-light="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -293,7 +304,7 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
 .solution { padding: 22px 24px; font-size: 1.06em; }
 .aside { margin: 16px auto 0; font-size: .82em; color: var(--muted); max-width: 42ch; }
 </style><div class=&quot;card&quot;><div class=&quot;halo&quot;><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;glow&quot;><div class=&quot;glow-bar&quot;></div><div class=&quot;solution&quot;>Camberra</div></div><div class=&quot;aside&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
-<figure class="cell"><figcaption><b>Slate</b><span>Editorial</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+<figure class="cell"><figcaption><b>Slate</b><span>Editorial</span></figcaption><iframe title="Prévia do tema Slate" loading="lazy" data-light="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -432,7 +443,7 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
 .margin-note { margin-top: 16px; font-size: .78em; color: var(--muted);
   border-left: 4px solid var(--accent); padding-left: 16px; }
 </style><div class=&quot;card&quot;><div class=&quot;masthead&quot;><span class=&quot;eyebrow&quot;>PERGUNTA</span></div><div class=&quot;lead&quot;><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;column&quot;><p class=&quot;dek&quot;>Camberra</p></div><div class=&quot;margin-note&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
-<figure class="cell"><figcaption><b>Sépia</b><span>Leitura</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+<figure class="cell"><figcaption><b>Sépia</b><span>Leitura</span></figcaption><iframe title="Prévia do tema Sépia" loading="lazy" data-light="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -580,7 +591,7 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
 .gloss { margin-top: 16px; font-size: .86em; font-style: italic; color: var(--muted);
   border-top: 1px solid var(--line); padding-top: 10px; }
 </style><div class=&quot;card&quot;><div class=&quot;folio&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;passage&quot;>Camberra</div><div class=&quot;gloss&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
-<figure class="cell"><figcaption><b>Neon</b><span>Vívido</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+<figure class="cell"><figcaption><b>Neon</b><span>Vívido</span></figcaption><iframe title="Prévia do tema Neon" loading="lazy" data-light="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -740,7 +751,7 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
 .readout { font-size: 1.02em; line-height: 1.5; }
 .log { margin-top: 14px; font-size: .8em; color: var(--muted); letter-spacing: .02em; text-align: left; }
 </style><div class=&quot;card&quot;><div class=&quot;hud&quot;><div class=&quot;hud-top&quot;><span class=&quot;tag&quot;>PERGUNTA</span></div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;panel&quot;><div class=&quot;readout&quot;>Camberra</div></div><div class=&quot;log&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
-<figure class="cell"><figcaption><b>Papel</b><span>Leitura</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+<figure class="cell"><figcaption><b>Papel</b><span>Leitura</span></figcaption><iframe title="Prévia do tema Papel" loading="lazy" data-light="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -891,7 +902,7 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
   background-image: repeating-linear-gradient(var(--bg) 0 29px, var(--line) 29px 30px); }
 .pin { margin-top: 16px; font-size: .82em; font-style: italic; color: var(--muted); }
 </style><div class=&quot;card&quot;><div class=&quot;sheet&quot;><div class=&quot;tab&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;ruled&quot;>Camberra</div><div class=&quot;pin&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
-<figure class="cell"><figcaption><b>Névoa</b><span>Sereno</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+<figure class="cell"><figcaption><b>Névoa</b><span>Sereno</span></figcaption><iframe title="Prévia do tema Névoa" loading="lazy" data-light="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -1024,7 +1035,7 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
   padding: 26px 30px; box-shadow: 0 10px 40px rgba(106,117,196,.14); }
 .drift { margin: 18px auto 0; font-size: .82em; color: var(--muted); max-width: 40ch; }
 </style><div class=&quot;card&quot;><div class=&quot;whisper&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;cloud&quot;>Camberra</div><div class=&quot;drift&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
-<figure class="cell"><figcaption><b>Contraste AAA</b><span>Acessível</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+<figure class="cell"><figcaption><b>Contraste AAA</b><span>Acessível</span></figcaption><iframe title="Prévia do tema Contraste AAA" loading="lazy" data-light="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -1166,7 +1177,7 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
   padding: 18px 20px; margin: 0 auto; max-width: 40ch; }
 .note { margin-top: 18px; font-weight: 600; border: 2px dashed var(--line); padding: 12px 14px; }
 </style><div class=&quot;card&quot;><div class=&quot;band&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;band answerband&quot;>RESPOSTA</div><div class=&quot;solution&quot;>Camberra</div><div class=&quot;note&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
-<figure class="cell"><figcaption><b>Código</b><span>Conteúdo</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+<figure class="cell"><figcaption><b>Código</b><span>Conteúdo</span></figcaption><iframe title="Prévia do tema Código" loading="lazy" data-light="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -1323,7 +1334,7 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
 .chip { font-size: 11px; color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--line));
   border-radius: 999px; padding: 3px 10px; }
 </style><div class=&quot;card&quot;><div class=&quot;win&quot;><div class=&quot;titlebar&quot;><span class=&quot;dot&quot;></span><span class=&quot;fname&quot;>PERGUNTA</span></div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;win&quot;><div class=&quot;titlebar&quot;><span class=&quot;dot&quot;></span><span class=&quot;fname&quot;>RESPOSTA</span></div><pre class=&quot;code&quot;>Camberra</pre></div><div class=&quot;chips&quot;><span class=&quot;chip&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</span></div></div>"></iframe></figure>
-<figure class="cell"><figcaption><b>Fórmula</b><span>Conteúdo</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+<figure class="cell"><figcaption><b>Fórmula</b><span>Conteúdo</span></figcaption><iframe title="Prévia do tema Fórmula" loading="lazy" data-light="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -1471,7 +1482,7 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
 .sym::before { content: &quot;\25B8&quot;; }
 .def { margin: 0; color: var(--fg); }
 </style><div class=&quot;card&quot;><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;display&quot;><span class=&quot;expr&quot;>Camberra</span></div><div class=&quot;where&quot;><span class=&quot;where-label&quot;>RESPOSTA</span><dl class=&quot;vars&quot;><div class=&quot;row&quot;><dt class=&quot;sym&quot;></dt><dd class=&quot;def&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</dd></div></dl></div></div>"></iframe></figure>
-<figure class="cell"><figcaption><b>Vocabulário</b><span>Conteúdo</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+<figure class="cell"><figcaption><b>Vocabulário</b><span>Conteúdo</span></figcaption><iframe title="Prévia do tema Vocabulário" loading="lazy" data-light="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -1625,7 +1636,7 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
   border-left: 3px solid var(--accent); font-style: italic; color: var(--muted); }
 .etym { text-align: left; max-width: 44ch; margin: 14px auto 0; font-size: .82em; color: var(--muted); }
 </style><div class=&quot;card&quot;><div class=&quot;entry&quot;><div class=&quot;prompt&quot;>serendipity</div><div class=&quot;phon-row&quot;><span class=&quot;ipa&quot;>/ˌsɛrənˈdɪpɪti/</span></div></div><hr id=answer><div class=&quot;sense&quot;><span class=&quot;sense-num&quot;>1</span><span class=&quot;def&quot;></span></div><div class=&quot;usage&quot;>Encontrar aquele café foi pura serendipity.</div></div>"></iframe></figure>
-<figure class="cell"><figcaption><b>Linha do tempo</b><span>Conteúdo</span></figcaption><iframe loading="lazy" data-light="<style>body{margin:0}.card {
+<figure class="cell"><figcaption><b>Linha do tempo</b><span>Conteúdo</span></figcaption><iframe title="Prévia do tema Linha do tempo" loading="lazy" data-light="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -1777,10 +1788,24 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
 <p class="note">Todos offline, com modo noturno pelo seletor composto <code>.card.nightMode</code>, e cada um aplica de fato suas próprias classes (a cobertura B4 dos 12 é 100%, verificada em Anki real). Esta página é gerada a partir do código, não desenhada à mão — é o que o add-on produz.</p>
 </div>
 <script>
+function sizeFrame(frame){
+ requestAnimationFrame(function(){
+  var root=frame.contentDocument&&frame.contentDocument.documentElement;
+  if(root){
+   frame.style.height=Math.max(320,root.scrollHeight)+'px';
+  }
+ });
+}
+document.querySelectorAll('iframe').forEach(function(frame){
+ frame.addEventListener('load',function(){sizeFrame(frame)});
+ sizeFrame(frame);
+});
 document.getElementById('t').addEventListener('click',function(){
  var d=document.documentElement.classList.toggle('dark');
  document.querySelectorAll('iframe').forEach(function(f){f.srcdoc=d?f.dataset.dark:f.dataset.light});
- this.textContent=d?'☀ Alternar diurno':'☾ Alternar noturno';
+ this.textContent=d?'Ver modo claro':'Ver modo noturno';
 });
 if(matchMedia('(prefers-color-scheme: dark)').matches)document.getElementById('t').click();
 </script>
+</body>
+</html>
