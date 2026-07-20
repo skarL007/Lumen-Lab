@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0c12">
+  <meta name="description" content="Card Template Manager for Anki: twelve distinctive themes, live previews, safe customization and a modern template engine inside Anki Studio Suite.">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:type" content="website"><meta property="og:title" content="Card Template Manager — Lumen Lab"><meta property="og:description" content="Design coherent, responsive and night-mode-ready Anki cards without fragile copy-and-paste.">
+  <title>Card Template Manager — Lumen Lab</title>
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="canonical" href="https://skarl007.github.io/Lumen-Lab/addons/card-template-manager/">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/addon-page.css">
+  <script src="../../data/locales.js" defer></script><script src="../../assets/i18n.js" defer></script><script src="../../assets/addon-page.js" defer></script>
+</head>
+<body class="theme-blue" data-page="ctm">
+  <a class="skip-link" href="#content" data-i18n="common.skip">Skip to content</a>
+  <header class="site-header addon-header" data-header>
+    <div class="nav-shell">
+      <a class="brand" href="../../" aria-label="Lumen Lab — home"><svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18"></circle><path d="M13 29V15h4v10h10v4H13Z"></path><path d="M27 15h4v14h-4z"></path></svg><span class="brand-type">LUMEN <small>LAB</small></span></a>
+      <button class="menu-toggle icon-button" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false" data-menu-toggle><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav><a href="../../#add-ons" aria-current="page" data-i18n="nav.addons">Add-ons</a><a href="#capabilities" data-i18n="addon.capabilities">What it does</a><a href="#install" data-i18n="install.title">Install in Anki</a><a href="../tag-mind-map/">Tag Mind Map</a></nav>
+      <div class="nav-actions"><label class="language-control"><span class="sr-only" data-i18n="common.language">Language</span><select data-language-select aria-label="Language"></select></label><button class="theme-toggle icon-button" type="button" aria-label="Switch color theme" data-theme-toggle><svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path></svg><svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5 8.7 8.7 0 1 0 20.5 14.2Z"></path></svg></button></div>
+    </div>
+  </header>
+
+  <main class="addon-main" id="content">
+    <section class="addon-hero">
+      <div class="page-shell addon-hero-grid">
+        <div class="addon-hero-copy">
+          <a class="addon-breadcrumb" href="../../"><span aria-hidden="true">←</span><span data-i18n="common.backHome">Back to Lumen Lab</span></a>
+          <p class="eyebrow" data-i18n="addon.suite">Anki Studio Suite · module</p>
+          <h1 data-i18n="ctm.title">Card Template Manager</h1>
+          <p class="addon-statement" data-i18n="ctm.statement">Turn note types into coherent learning interfaces.</p>
+          <p class="addon-summary" data-i18n="ctm.summary">Choose one of twelve structurally distinct themes, preview every state and customize fields, typography, color and layout while the engine protects the underlying Anki model.</p>
+          <div class="addon-hero-actions"><a class="button button-primary" href="#install"><span data-i18n="install.title">Install in Anki</span> <span aria-hidden="true">↓</span></a><a class="button button-secondary" href="../../redesign/_artifact.html">View all 12 themes</a></div>
+          <div class="addon-badges"><span data-i18n="addon.included">Included in one unified extension</span><span>v3.0.0</span><span>AGPL-3.0</span><span>Offline</span></div>
+        </div>
+        <div class="addon-visual" aria-label="Card Template Manager interface preview"><div class="addon-visual-frame"><img src="../../screenshots/03-card-template-manager.png" width="1327" height="975" alt="Card Template Manager theme gallery, editor and live card preview"><span class="addon-visual-tag">Real interface</span></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="page-shell detail-layout">
+        <aside class="toc" aria-label="On this page"><strong>On this page</strong><nav><a href="#overview" data-i18n="addon.overview">Overview</a><a href="#capabilities" data-i18n="addon.capabilities">What it does</a><a href="#workflow" data-i18n="addon.workflow">How it works</a><a href="#safety" data-i18n="addon.safety">Safety by design</a><a href="#compatibility" data-i18n="addon.compatibility">Compatibility</a><a href="#status" data-i18n="addon.status">Release status</a><a href="#install" data-i18n="install.title">Install in Anki</a><a href="#faq" data-i18n="addon.faq">FAQ</a></nav></aside>
+        <div class="detail-content">
+          <section class="content-block" id="overview">
+            <p class="content-kicker" data-i18n="addon.overview">Overview</p><h2>Templates should support memory, not fight it.</h2>
+            <p class="content-lede">Card Template Manager replaces brittle HTML/CSS copy-and-paste with a visual workflow that understands Anki note types.</p>
+            <p>Its v3 engine separates content slots from presentation. A theme is not just a new color palette: each of the twelve themes owns a distinct HTML structure — from editorial pages and timelines to code workspaces and compact HUDs. The selected design is compiled into real front, back and styling templates.</p>
+          </section>
+
+          <section class="content-block" id="capabilities">
+            <p class="content-kicker" data-i18n="addon.capabilities">What it does</p><h2>A complete design system inside Anki.</h2><p>Every tool is organized around the note type you are editing, so the preview and the generated template stay connected.</p>
+            <div class="feature-grid">
+              <article class="feature-card"><span class="feature-number">01 · THEMES</span><h3>Twelve genuinely different layouts</h3><p>Editorial, timeline, book page, glossary, code editor, halo, HUD and other structures — not one layout recolored twelve times.</p></article>
+              <article class="feature-card"><span class="feature-number">02 · PREVIEW</span><h3>Front, back and night mode</h3><p>Inspect the important card states before writing to the collection. The preview is generated by the same engine used for the final template.</p></article>
+              <article class="feature-card"><span class="feature-number">03 · FIELDS</span><h3>Field-aware setup</h3><p>Create suggested fields, reorder mappings and connect semantic slots such as question, answer, context, source and hint to your note model.</p></article>
+              <article class="feature-card"><span class="feature-number">04 · CUSTOMIZE</span><h3>Typography, color and composition</h3><p>Refine visual tokens without losing the theme's structure. Advanced users can continue into template and CSS editing.</p></article>
+              <article class="feature-card"><span class="feature-number">05 · RESPONSIVE</span><h3>Desktop, mobile and night-ready</h3><p>Layouts adapt to smaller review surfaces and use Anki's compound <code>.card.nightMode</code> selector for reliable dark mode.</p></article>
+              <article class="feature-card"><span class="feature-number">06 · IMPORT</span><h3>Sanitized import and export</h3><p>Template packages are validated before use. Unsafe paths and malformed payloads are rejected instead of reaching the collection.</p></article>
+            </div>
+          </section>
+
+          <section class="content-block" id="workflow">
+            <p class="content-kicker" data-i18n="addon.workflow">How it works</p><h2>From idea to working note type.</h2>
+            <div class="workflow"><article class="workflow-step"><div><h3>Choose a starting point</h3><p>Create a new note type or select an existing one. Existing templates are never migrated silently.</p></div></article><article class="workflow-step"><div><h3>Select a structural theme</h3><p>Compare twelve designs in the gallery and inspect their behavior before applying anything.</p></div></article><article class="workflow-step"><div><h3>Map fields and customize</h3><p>Connect your fields to semantic slots, then adjust typography, colors, layout controls and optional advanced CSS.</p></div></article><article class="workflow-step"><div><h3>Review the diff and apply</h3><p>For existing note types, the release build will show the exact before/after diff, create a backup and apply only after explicit confirmation.</p></div></article></div>
+          </section>
+
+          <section class="content-block" id="safety">
+            <p class="content-kicker" data-i18n="addon.safety">Safety by design</p><h2>Your collection is not a design sandbox.</h2><p>Template editing can affect every card produced by a note type. The suite treats that as a sensitive operation.</p>
+            <div class="safety-panel"><h3>Collection protection contract</h3><ul><li>Existing note types are never migrated during an update.</li><li>Migration is opt-in and designed to show a before/after diff.</li><li>A backup is created before a destructive template write.</li><li>The classic generator remains available as the “Classic” layout.</li><li>All rendering assets ship locally: no CDN, telemetry or remote fonts.</li><li>Imported packages are validated and sanitized before extraction.</li></ul></div>
+          </section>
+
+          <section class="content-block" id="compatibility">
+            <p class="content-kicker" data-i18n="addon.compatibility">Compatibility</p><h2>Built for current Anki workflows.</h2>
+            <ul class="compat-grid"><li><strong>Anki version</strong><span>Anki 23.10 or newer on desktop. The package declares minimum point version 231000.</span></li><li><strong>Review devices</strong><span>Generated cards remain standard HTML/CSS and are designed for desktop and mobile review clients.</span></li><li><strong>Night mode</strong><span>Uses Anki's supported compound night-mode selector without remote runtime dependencies.</span></li><li><strong>Languages</strong><span>English is the default. The suite foundation supports 13 languages, including RTL layouts.</span></li><li><strong>Connectivity</strong><span>Works offline. No CDN, account, cloud service or telemetry is required.</span></li><li><strong>Suite model</strong><span>Installed together with Tag Mind Map. There are no separate packages to keep in sync.</span></li></ul>
+          </section>
+
+          <section class="content-block" id="status">
+            <p class="content-kicker" data-i18n="addon.status">Release status</p><h2>Working software, transparent gates.</h2><p>The page distinguishes what already works from what still blocks public installation.</p>
+            <div class="status-panel"><div class="status-ring"><b>86%</b></div><div class="status-copy"><h3>Release candidate · v3.0.0</h3><p data-i18n="ctm.statusBody">The v3 engine and twelve themes are working and tested. Publication is waiting for the opt-in migration diff dialog, final interface translation sweep and visual QA inside Anki.</p><ul class="gate-list"><li>Opt-in migration dialog with before/after diff and backup</li><li>Final translation sweep across the desktop interface</li><li>Visual QA inside Anki with the user's explicit authorization</li></ul></div></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section install-section" id="install">
+      <div class="page-shell install-grid">
+        <div><p class="content-kicker" data-i18n="install.title">Install in Anki</p><h2 data-i18n="install.lead">Both modules are installed together through one Anki Studio Suite code.</h2><p>The public installation route will appear here as soon as the unified package completes the remaining release gates. No separate Card Template Manager code will be issued.</p></div>
+        <div class="install-card"><label data-i18n="install.codeLabel">AnkiWeb installation code</label><div class="install-code-row"><code class="install-code" data-i18n="install.pending">Available at launch</code><button type="button" disabled data-i18n="install.copy" data-i18n-aria-label="install.disabled">Copy code</button></div><p class="install-note" data-i18n="install.codeNote">The final public ID has not been selected yet. We will publish it here after the unified suite passes the release gates.</p><h3 data-i18n="install.manualTitle">Manual package installation</h3><ol class="manual-steps"><li data-i18n="install.step1">Download suite.ankiaddon from the release page when it becomes available.</li><li data-i18n="install.step2">Open Anki and choose Tools → Add-ons.</li><li data-i18n="install.step3">Choose Install from file and select suite.ankiaddon.</li><li data-i18n="install.step4">Restart Anki. Both modules will appear in the Tools menu.</li></ol><div class="requirement-strip" data-i18n="install.requirement">Requires Anki 23.10 or newer · desktop only · works offline</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="page-shell detail-layout"><aside></aside><div class="detail-content"><div class="content-block"><p class="content-kicker" data-i18n="addon.faq">Frequently asked questions</p><h2>Before you change a note type.</h2><div class="faq-list"><details><summary>Will applying a theme delete my cards?</summary><p>No. Themes modify note-type templates and styling, not the notes themselves. Existing-type migration will still require an explicit diff review and backup before writing.</p></details><details><summary>Can I use only Card Template Manager?</summary><p>Yes. Both modules install together, but you can simply use the template manager and ignore the map. Combining them avoids duplicated infrastructure and version conflicts.</p></details><details><summary>Do the generated cards need the add-on to review?</summary><p>The output is standard Anki HTML and CSS. Normal card review does not depend on a cloud service or a CDN.</p></details><details><summary>Can I edit the generated HTML and CSS?</summary><p>Yes. The visual system accelerates setup, while advanced editing remains available for users who need custom behavior.</p></details><details><summary>Why is the installation code not shown yet?</summary><p>The two original add-ons are now one suite, and the final AnkiWeb identity must be chosen before publication. Displaying an old or invented ID would install the wrong package.</p></details></div></div></div></div>
+    </section>
+
+    <section class="section"><div class="page-shell"><a class="other-addon" href="../tag-mind-map/"><div><p class="content-kicker" data-i18n="addon.other">Explore the other module</p><h2>Tag Mind Map</h2><p data-i18n="ctm.otherBody">See how Tag Mind Map turns the same collection into a navigable graph.</p></div><span aria-hidden="true">→</span></a></div></section>
+  </main>
+
+  <aside class="translation-note" data-translation-note hidden><span data-i18n="common.reviewNote">Community translation — technical reference may remain in English.</span></aside>
+  <footer class="site-footer"><div class="page-shell footer-grid"><a class="brand footer-brand" href="../../"><svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18"></circle><path d="M13 29V15h4v10h10v4H13Z"></path><path d="M27 15h4v14h-4z"></path></svg><span class="brand-type">LUMEN <small>LAB</small></span></a><p>Card Template Manager is part of Anki Studio Suite.</p><div class="footer-meta"><span>© <span data-current-year></span> Lumen Lab</span><span>AGPL-3.0</span><span>v3.0.0</span></div></div></footer>
+</body>
+</html>

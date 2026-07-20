@@ -1,8 +1,8 @@
 {
   "name": "Lumen Lab",
   "short_name": "Lumen Lab",
-  "description": "Add-ons independentes para Anki e ferramentas para aprender melhor.",
-  "lang": "pt-BR",
+  "description": "Independent, offline-first Anki add-ons and tools for deeper learning.",
+  "lang": "en",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#0a0c12",

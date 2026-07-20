@@ -85,7 +85,7 @@ body::before {
 
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; }
-button, input { font: inherit; }
+button, input, select { font: inherit; }
 button, a { touch-action: manipulation; }
 
 :focus-visible {
@@ -263,6 +263,12 @@ h3 { font-size: 1.34rem; font-weight: 650; letter-spacing: -.025em; }
 .site-nav a:hover { color: var(--ink); }
 .site-nav a:hover::after { transform: scaleX(1); transform-origin: left; }
 .nav-actions { justify-self: end; display: flex; align-items: center; gap: 10px; }
+.language-control { position: relative; display: flex; align-items: center; }
+.language-control::before { content: ""; width: 16px; height: 16px; position: absolute; inset-inline-start: 12px; pointer-events: none; opacity: .68; background: currentColor; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-width='1.8' d='M4 5h10M9 3v2m-4 5c3 0 6-2 7-5m-5 3c1 3 3 5 6 6m2-5h5m-2.5-2v12m-4-4h8'/%3E%3C/svg%3E") center/contain no-repeat; }
+.language-control select { min-height: 44px; max-width: 164px; padding: 0 32px 0 38px; color: var(--ink-soft); background: var(--surface-soft); border: 1px solid var(--line); border-radius: 999px; cursor: pointer; }
+[dir="rtl"] .language-control select { padding: 0 38px 0 32px; }
+.language-control select:hover, .language-control select:focus-visible { color: var(--ink); border-color: var(--line-strong); }
+.translation-note { position: fixed; z-index: 30; right: 18px; bottom: 18px; max-width: min(420px, calc(100% - 36px)); padding: 12px 16px; color: var(--ink-soft); background: color-mix(in srgb, var(--surface) 94%, transparent); border: 1px solid var(--line-strong); border-radius: 12px; box-shadow: var(--shadow); backdrop-filter: blur(18px); font-size: .76rem; line-height: 1.5; }
 .theme-icon { position: absolute; transition: opacity 180ms ease, transform 240ms var(--ease); }
 html[data-theme="dark"] .theme-icon-moon, html[data-theme="light"] .theme-icon-sun { opacity: 0; transform: scale(.5) rotate(-35deg); }
 html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-moon { opacity: 1; transform: scale(1) rotate(0); }
@@ -632,6 +638,8 @@ html[data-theme="dark"] .theme-icon-sun, html[data-theme="light"] .theme-icon-mo
   .section { padding: 78px 0; }
   .brand-mark { width: 33px; height: 33px; }
   .brand-type { font-size: .78rem; }
+  .language-control select { width: 52px; max-width: 52px; color: transparent; padding-inline: 38px 8px; }
+  .language-control select option { color: initial; }
   h1 { font-size: clamp(3.1rem, 16vw, 4.7rem); }
   h2 { font-size: clamp(2.45rem, 12vw, 3.6rem); }
   .hero { min-height: auto; padding-top: calc(var(--header-height) + 74px); padding-bottom: 42px; }
