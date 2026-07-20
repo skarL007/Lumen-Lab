@@ -77,7 +77,7 @@ window.LUMEN_CATALOG = {
       screenshotAlt: "Interface escura do Card Template Manager com galeria de temas e prévia do cartão",
       links: [
         { label: "Ver showcase dos temas", href: "redesign/_artifact.html", kind: "primary" },
-        { label: "Perfil no GitHub", href: "https://github.com/skarL007", kind: "secondary", external: true }
+        { label: "Código do site", href: "https://github.com/skarL007/Lumen-Lab", kind: "secondary", external: true }
       ]
     }
   ]
