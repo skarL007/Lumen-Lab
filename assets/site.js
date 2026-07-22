@@ -68,8 +68,8 @@
     else {
       artwork = element("div", "module-art module-art-screenshot");
       const image = document.createElement("img");
-      Object.assign(image, { src: module.screenshot, alt: ct(module.id, "screenshotAlt", module.screenshotAlt), width: 1327, height: 975, loading: "lazy", decoding: "async" });
-      artwork.append(image, element("span", "module-art-label", t("site.realInterface")));
+      Object.assign(image, { src: module.screenshot, alt: ct(module.id, "screenshotAlt", module.screenshotAlt), width: 1600, height: 1015, loading: "lazy", decoding: "async" });
+      artwork.append(image, element("span", "module-art-label", t(module.artCaption || "site.realInterface")));
     }
     const copy = element("div", "module-copy");
     const meta = element("div", "module-meta");
@@ -109,8 +109,8 @@
     const second = element("a", "button button-secondary", fmt(explore, { name: product.modules[1].name })); second.href = product.modules[1].page;
     actions.append(first, second); copy.append(metrics, actions);
     const visual = element("div", "product-visual");
-    const image = document.createElement("img"); Object.assign(image, { src: product.screenshot, alt: product.screenshotAlt, width: 1327, height: 975, loading: "lazy", decoding: "async" });
-    visual.append(image, element("span", "visual-caption", t("site.realInterface"))); article.append(copy, visual); fragment.append(article);
+    const image = document.createElement("img"); Object.assign(image, { src: product.screenshot, alt: product.screenshotAlt, width: 1600, height: 1015, loading: "lazy", decoding: "async" });
+    visual.append(image, element("span", "visual-caption", t(product.artCaption || "site.realInterface"))); article.append(copy, visual); fragment.append(article);
 
     const section = element("section", "module-showcase reveal");
     const heading = element("div", "module-section-heading");

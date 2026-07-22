@@ -11,7 +11,7 @@ window.LUMEN_CATALOG = {
       metrics: [
         { value: "12", label: "distinct themes" },
         { value: "2", label: "integrated tools" },
-        { value: "13", label: "supported languages" }
+        { value: "14", label: "supported languages" }
       ],
       integration: "Both modules share the same safety layer, search, internationalization and scheduler-aware metrics. Build the note type in Card Template Manager, then navigate its knowledge structure in Tag Mind Map.",
       modules: [
@@ -25,8 +25,9 @@ window.LUMEN_CATALOG = {
           categories: ["templates", "in-development"],
           accent: "blue",
           art: "screenshot",
-          screenshot: "screenshots/03-card-template-manager.png",
-          screenshotAlt: "Theme gallery and live card preview in Card Template Manager",
+          screenshot: "screenshots/card-gallery.png",
+          screenshotAlt: "Six of the twelve v3 themes rendered by the engine",
+          artCaption: "site.engineRendered",
           statement: "Templates that feel like a product, not a configuration screen.",
           summary: "Create and customize note types with a visual gallery, front/back/night previews, suggested fields and an engine that truly applies the selected layout.",
           proof: ["12 layouts", "v3 engine", "Collection-safe"]
@@ -40,14 +41,18 @@ window.LUMEN_CATALOG = {
           status: "Included in the suite",
           categories: ["visualization", "in-development"],
           accent: "mint",
-          art: "graph",
+          art: "screenshot",
+          screenshot: "screenshots/tag-mind-map-graph.png",
+          screenshotAlt: "Tag Mind Map: knowledge graph of study tags with activity heatmap and mastery colors",
+          artCaption: "site.realInterface",
           statement: "Your collection stops looking like a list and becomes a map.",
           summary: "Explore tag hierarchy as a graph, track progress, activity and mastery, find connections and use study signals aligned with FSRS.",
           proof: ["FSRS-aware", "Interactive graph", "100% offline"]
         }
       ],
-      screenshot: "screenshots/03-card-template-manager.png",
-      screenshotAlt: "Dark Card Template Manager interface with theme gallery and card preview"
+      screenshot: "screenshots/card-gallery.png",
+      screenshotAlt: "Twelve v3 themes rendered by the Card Template Manager engine",
+      artCaption: "site.engineRendered"
     }
   ]
 };
