@@ -266,6 +266,12 @@ h3 { font-size: 1.34rem; font-weight: 650; letter-spacing: -.025em; }
 .language-control { position: relative; display: flex; align-items: center; }
 .language-control::before { content: ""; width: 16px; height: 16px; position: absolute; inset-inline-start: 12px; pointer-events: none; opacity: .68; background: currentColor; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-width='1.8' d='M4 5h10M9 3v2m-4 5c3 0 6-2 7-5m-5 3c1 3 3 5 6 6m2-5h5m-2.5-2v12m-4-4h8'/%3E%3C/svg%3E") center/contain no-repeat; }
 .language-control select { min-height: 44px; max-width: 164px; padding: 0 32px 0 38px; color: var(--ink-soft); background: var(--surface-soft); border: 1px solid var(--line); border-radius: 999px; cursor: pointer; }
+/* Opcoes do dropdown nativo: o popup do <select> no Windows/Chrome renderiza com
+   fundo do sistema (branco) mas herda o color claro do select -> texto ilegivel
+   no tema escuro. Fixar contraste explicito nas options (dark-on-white) em todas
+   as paginas. */
+.language-control select option { color: #16181d; background: #ffffff; }
+.language-control select option:checked, .language-control select option:hover { background: #e6e9f2; color: #0b0d12; }
 [dir="rtl"] .language-control select { padding: 0 38px 0 32px; }
 .language-control select:hover, .language-control select:focus-visible { color: var(--ink); border-color: var(--line-strong); }
 .translation-note { position: fixed; z-index: 30; right: 18px; bottom: 18px; max-width: min(420px, calc(100% - 36px)); padding: 12px 16px; color: var(--ink-soft); background: color-mix(in srgb, var(--surface) 94%, transparent); border: 1px solid var(--line-strong); border-radius: 12px; box-shadow: var(--shadow); backdrop-filter: blur(18px); font-size: .76rem; line-height: 1.5; }
