@@ -9,6 +9,7 @@
   <meta property="og:type" content="website"><meta property="og:title" content="Tag Mind Map — Lumen Lab"><meta property="og:description" content="Turn your Anki tag hierarchy into a navigable knowledge map with FSRS-aware progress.">
   <meta property="og:url" content="https://skarl007.github.io/Lumen-Lab/addons/tag-mind-map/">
   <meta property="og:image" content="https://skarl007.github.io/Lumen-Lab/screenshots/tag-mind-map-social.png">
+  <meta property="og:image:alt" content="Tag Mind Map: an interactive knowledge graph of study tags with an activity heatmap and mastery colors">
   <meta name="twitter:card" content="summary_large_image">
   <title>Tag Mind Map — Lumen Lab</title>
   <script>document.documentElement.classList.add("js");</script>
@@ -42,14 +43,14 @@
           <div class="addon-badges"><span data-i18n="addon.included">Included in one unified extension</span><span>FSRS-aware</span><span>Mermaid</span><span>Offline</span></div>
         </div>
         <div class="addon-visual" aria-label="Tag Mind Map graph preview">
-          <div class="addon-visual-frame"><img src="../../screenshots/tag-mind-map-graph.png" width="1600" height="1000" alt="Tag Mind Map showing a knowledge graph with activity heatmap and mastery colors" loading="lazy" decoding="async"><span class="addon-visual-tag">Real interface</span></div>
+          <div class="addon-visual-frame"><img src="../../screenshots/tag-mind-map-graph.png" width="1600" height="1000" alt="Tag Mind Map showing a knowledge graph with activity heatmap and mastery colors" fetchpriority="high" decoding="async"><span class="addon-visual-tag" data-i18n="site.realInterface">Real interface</span></div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="page-shell detail-layout">
-        <aside class="toc" aria-label="On this page"><strong>On this page</strong><nav><a href="#overview" data-i18n="addon.overview">Overview</a><a href="#capabilities" data-i18n="addon.capabilities">What it does</a><a href="#workflow" data-i18n="addon.workflow">How it works</a><a href="#safety" data-i18n="addon.safety">Safety by design</a><a href="#compatibility" data-i18n="addon.compatibility">Compatibility</a><a href="#status" data-i18n="addon.status">Release status</a><a href="#install" data-i18n="install.title">Install in Anki</a><a href="#faq" data-i18n="addon.faq">FAQ</a></nav></aside>
+        <aside class="toc" aria-label="On this page"><strong>On this page</strong><nav><a href="#overview" data-i18n="addon.overview">Overview</a><a href="#capabilities" data-i18n="addon.capabilities">What it does</a><a href="#in-action">In action</a><a href="#workflow" data-i18n="addon.workflow">How it works</a><a href="#safety" data-i18n="addon.safety">Safety by design</a><a href="#compatibility" data-i18n="addon.compatibility">Compatibility</a><a href="#status" data-i18n="addon.status">Release status</a><a href="#install" data-i18n="install.title">Install in Anki</a><a href="#faq" data-i18n="addon.faq">FAQ</a></nav></aside>
         <div class="detail-content">
           <section class="content-block" id="overview">
             <p class="content-kicker" data-i18n="addon.overview">Overview</p><h2>A collection is a network, not a folder tree.</h2>
@@ -66,6 +67,15 @@
               <article class="feature-card"><span class="feature-number">04 · INSIGHTS</span><h3>Signals worth acting on</h3><p>Spot neglected branches, fragile knowledge and areas with momentum through scheduler-aware insights and recommendations.</p></article>
               <article class="feature-card"><span class="feature-number">05 · FILTERS</span><h3>Search and contextual focus</h3><p>Filter the graph, isolate a branch and move from a tag directly to the cards that make up that concept space.</p></article>
               <article class="feature-card"><span class="feature-number">06 · EXPORT</span><h3>Offline Mermaid export</h3><p>Generate a correctly escaped, deduplicated Mermaid flowchart from the hierarchy for notes, documentation or sharing.</p></article>
+            </div>
+          </section>
+
+          <section class="content-block" id="in-action">
+            <p class="content-kicker">In action</p><h2>Real screens, produced by the add-on itself.</h2><p>Every image below is rendered by the add-on's own graph frontend and Mermaid generator — not a mockup.</p>
+            <div class="media-showcase">
+              <figure class="media-item"><img src="../../screenshots/tag-mind-map-trends.png" width="1400" height="1105" alt="Trends view showing mastery over time, cards per day, a retention chart and a period summary" loading="lazy" decoding="async"><figcaption><b>03 · Activity</b>Mastery over time, cards per day, retention and a period summary.</figcaption></figure>
+              <figure class="media-item"><img src="../../screenshots/tag-mind-map-insights.png" width="760" height="715" alt="Recommendations panel listing scheduler-aware study suggestions" loading="lazy" decoding="async"><figcaption><b>04 · Insights</b>Scheduler-aware recommendations you can act on.</figcaption></figure>
+              <figure class="media-item"><img src="../../screenshots/tag-mind-map-mermaid.png" width="1400" height="796" alt="The exact Mermaid flowchart source that the add-on exports from the tag hierarchy" loading="lazy" decoding="async"><figcaption><b>06 · Export</b>The exact Mermaid your filtered graph exports — paste into any viewer.</figcaption></figure>
             </div>
           </section>
 
@@ -86,7 +96,7 @@
 
           <section class="content-block" id="status">
             <p class="content-kicker" data-i18n="addon.status">Release status</p><h2>The map works. The final controls are being closed.</h2><p>The core graph and scheduler logic have been tested; the page keeps the remaining release work visible.</p>
-            <div class="status-panel"><div class="status-ring"><b>90%</b></div><div class="status-copy"><h3>Release candidate · v3.0.0</h3><p data-i18n="tmm.statusBody">The graph, statistics, FSRS metrics and Mermaid generator are tested. Publication is waiting for the export button wiring, final translation sweep and visual QA inside Anki.</p><ul class="gate-list"><li>Connect the tested Mermaid generator to the export button</li><li>Final translation sweep across graph controls and insights</li><li>Visual QA inside Anki with the user's explicit authorization</li></ul></div></div>
+            <div class="status-panel"><div class="status-ring" style="--pct:90%"><b>90%</b></div><div class="status-copy"><h3>Release candidate · v3.0.0</h3><p data-i18n="tmm.statusBody">The graph, statistics, FSRS metrics and Mermaid generator are tested. Publication is waiting for the export button wiring, final translation sweep and visual QA inside Anki.</p><ul class="gate-list"><li>Connect the tested Mermaid generator to the export button</li><li>Final translation sweep across graph controls and insights</li><li>Visual QA inside Anki with the user's explicit authorization</li></ul></div></div>
           </section>
         </div>
       </div>
