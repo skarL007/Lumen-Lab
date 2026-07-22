@@ -484,15 +484,26 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
   --font: Georgia, &quot;Times New Roman&quot;, serif; text-align: left; }
 .card.nightMode, .card.night_mode { --bg: #211c15; --fg: #e8ddc7; --surface: #2a241b;
   --line: #3a3125; --accent: #e0975a; --muted: #b6a988; --bold: #f5ecd8; }
-.folio { font-variant: small-caps; letter-spacing: .08em; font-weight: 700; color: var(--muted);
-  margin-bottom: 10px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
-.prompt { font-size: 1.5em; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+.leaf { max-width: 48ch; margin: 0 auto; }
+.headband { display: flex; align-items: baseline; justify-content: space-between;
+  border-bottom: 2px solid var(--line); padding-bottom: 6px; margin-bottom: 16px; }
+.rubric { font-variant: small-caps; letter-spacing: .14em; font-weight: 700;
+  color: var(--muted); font-size: .82em; }
+.folio { color: var(--accent); font-size: 1.1em; line-height: 1; }
+.folio::before { content: &quot;\2766&quot;; }
+.prompt { font-size: 1.5em; font-weight: 700; line-height: 1.3; }
+.leaf-verso::after { content: &quot;&quot;; display: table; clear: both; }
+.marginalia { float: right; width: 34%; max-width: 15ch; margin: 5px 0 14px 24px;
+  border-left: 1px solid var(--line); padding-left: 14px; color: var(--muted); font-size: .82em; }
+.marginalia:empty { display: none; }
+.mnote { line-height: 1.5; font-style: italic; }
+.mnote + .mnote { margin-top: 12px; padding-top: 12px; border-top: 1px dotted var(--line); }
+.siglum { color: var(--accent); font-weight: 700; font-style: normal; margin-right: 5px; }
+.siglum::before { content: &quot;\203B&quot;; }
 .passage { font-size: 1.08em; line-height: 1.7; text-indent: 1.4em; text-align: justify; }
 .passage::first-letter { font-size: 2.6em; float: left; line-height: .8; padding: 2px 8px 0 0;
   color: var(--accent); font-weight: 700; }
-.gloss { margin-top: 16px; font-size: .86em; font-style: italic; color: var(--muted);
-  border-top: 1px solid var(--line); padding-top: 10px; }
-</style><div class=&quot;card&quot;><div class=&quot;folio&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;passage&quot;>Camberra</div><div class=&quot;gloss&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" data-dark="<style>body{margin:0}.card {
+</style><div class=&quot;card&quot;><div class=&quot;leaf&quot;><header class=&quot;headband&quot;><span class=&quot;rubric&quot;>PERGUNTA</span><span class=&quot;folio&quot;></span></header><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;leaf leaf-verso&quot;><aside class=&quot;marginalia&quot;><div class=&quot;mnote&quot;><span class=&quot;siglum&quot;></span><span class=&quot;mtext&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</span></div></aside><div class=&quot;passage&quot;>Camberra</div></div></div>" data-dark="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -533,15 +544,26 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
   --font: Georgia, &quot;Times New Roman&quot;, serif; text-align: left; }
 .card.nightMode, .card.night_mode { --bg: #211c15; --fg: #e8ddc7; --surface: #2a241b;
   --line: #3a3125; --accent: #e0975a; --muted: #b6a988; --bold: #f5ecd8; }
-.folio { font-variant: small-caps; letter-spacing: .08em; font-weight: 700; color: var(--muted);
-  margin-bottom: 10px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
-.prompt { font-size: 1.5em; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+.leaf { max-width: 48ch; margin: 0 auto; }
+.headband { display: flex; align-items: baseline; justify-content: space-between;
+  border-bottom: 2px solid var(--line); padding-bottom: 6px; margin-bottom: 16px; }
+.rubric { font-variant: small-caps; letter-spacing: .14em; font-weight: 700;
+  color: var(--muted); font-size: .82em; }
+.folio { color: var(--accent); font-size: 1.1em; line-height: 1; }
+.folio::before { content: &quot;\2766&quot;; }
+.prompt { font-size: 1.5em; font-weight: 700; line-height: 1.3; }
+.leaf-verso::after { content: &quot;&quot;; display: table; clear: both; }
+.marginalia { float: right; width: 34%; max-width: 15ch; margin: 5px 0 14px 24px;
+  border-left: 1px solid var(--line); padding-left: 14px; color: var(--muted); font-size: .82em; }
+.marginalia:empty { display: none; }
+.mnote { line-height: 1.5; font-style: italic; }
+.mnote + .mnote { margin-top: 12px; padding-top: 12px; border-top: 1px dotted var(--line); }
+.siglum { color: var(--accent); font-weight: 700; font-style: normal; margin-right: 5px; }
+.siglum::before { content: &quot;\203B&quot;; }
 .passage { font-size: 1.08em; line-height: 1.7; text-indent: 1.4em; text-align: justify; }
 .passage::first-letter { font-size: 2.6em; float: left; line-height: .8; padding: 2px 8px 0 0;
   color: var(--accent); font-weight: 700; }
-.gloss { margin-top: 16px; font-size: .86em; font-style: italic; color: var(--muted);
-  border-top: 1px solid var(--line); padding-top: 10px; }
-</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;folio&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;passage&quot;>Camberra</div><div class=&quot;gloss&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" srcdoc="<style>body{margin:0}.card {
+</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;leaf&quot;><header class=&quot;headband&quot;><span class=&quot;rubric&quot;>PERGUNTA</span><span class=&quot;folio&quot;></span></header><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;leaf leaf-verso&quot;><aside class=&quot;marginalia&quot;><div class=&quot;mnote&quot;><span class=&quot;siglum&quot;></span><span class=&quot;mtext&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</span></div></aside><div class=&quot;passage&quot;>Camberra</div></div></div>" srcdoc="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -582,15 +604,26 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
   --font: Georgia, &quot;Times New Roman&quot;, serif; text-align: left; }
 .card.nightMode, .card.night_mode { --bg: #211c15; --fg: #e8ddc7; --surface: #2a241b;
   --line: #3a3125; --accent: #e0975a; --muted: #b6a988; --bold: #f5ecd8; }
-.folio { font-variant: small-caps; letter-spacing: .08em; font-weight: 700; color: var(--muted);
-  margin-bottom: 10px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
-.prompt { font-size: 1.5em; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+.leaf { max-width: 48ch; margin: 0 auto; }
+.headband { display: flex; align-items: baseline; justify-content: space-between;
+  border-bottom: 2px solid var(--line); padding-bottom: 6px; margin-bottom: 16px; }
+.rubric { font-variant: small-caps; letter-spacing: .14em; font-weight: 700;
+  color: var(--muted); font-size: .82em; }
+.folio { color: var(--accent); font-size: 1.1em; line-height: 1; }
+.folio::before { content: &quot;\2766&quot;; }
+.prompt { font-size: 1.5em; font-weight: 700; line-height: 1.3; }
+.leaf-verso::after { content: &quot;&quot;; display: table; clear: both; }
+.marginalia { float: right; width: 34%; max-width: 15ch; margin: 5px 0 14px 24px;
+  border-left: 1px solid var(--line); padding-left: 14px; color: var(--muted); font-size: .82em; }
+.marginalia:empty { display: none; }
+.mnote { line-height: 1.5; font-style: italic; }
+.mnote + .mnote { margin-top: 12px; padding-top: 12px; border-top: 1px dotted var(--line); }
+.siglum { color: var(--accent); font-weight: 700; font-style: normal; margin-right: 5px; }
+.siglum::before { content: &quot;\203B&quot;; }
 .passage { font-size: 1.08em; line-height: 1.7; text-indent: 1.4em; text-align: justify; }
 .passage::first-letter { font-size: 2.6em; float: left; line-height: .8; padding: 2px 8px 0 0;
   color: var(--accent); font-weight: 700; }
-.gloss { margin-top: 16px; font-size: .86em; font-style: italic; color: var(--muted);
-  border-top: 1px solid var(--line); padding-top: 10px; }
-</style><div class=&quot;card&quot;><div class=&quot;folio&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;passage&quot;>Camberra</div><div class=&quot;gloss&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
+</style><div class=&quot;card&quot;><div class=&quot;leaf&quot;><header class=&quot;headband&quot;><span class=&quot;rubric&quot;>PERGUNTA</span><span class=&quot;folio&quot;></span></header><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div><hr id=answer><div class=&quot;leaf leaf-verso&quot;><aside class=&quot;marginalia&quot;><div class=&quot;mnote&quot;><span class=&quot;siglum&quot;></span><span class=&quot;mtext&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</span></div></aside><div class=&quot;passage&quot;>Camberra</div></div></div>"></iframe></figure>
 <figure class="cell"><figcaption><b>Neon</b><span>Vívido</span></figcaption><iframe title="Prévia do tema Neon" loading="lazy" data-light="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
@@ -940,13 +973,24 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
 }
 .card { --accent: #6a75c4; --surface: #eef0f7; --line: #e6e9f2; }
 .card.nightMode, .card.night_mode { --accent: #aab3e0; --surface: #191c26; --line: #262b3a; }
-.whisper { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 22px; }
+.strata { position: relative; max-width: 42ch; margin: 0 auto; padding: 34px 10px; isolation: isolate; }
+.layer { position: absolute; left: 50%; transform: translateX(-50%); border-radius: 42px;
+  z-index: -1; filter: blur(3px); pointer-events: none; }
+.layer-far { top: 2%; width: 74%; height: 60%;
+  background: radial-gradient(60% 80% at 50% 40%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 72%); }
+.layer-near { top: 16%; width: 98%; height: 74%;
+  background: radial-gradient(72% 92% at 50% 55%, var(--surface), transparent 80%); }
+.crest { position: relative; }
 .prompt { font-size: 1.2em; font-weight: 500; line-height: 1.5; }
-.cloud { margin: 8px auto 0; max-width: 40ch; background: var(--surface); border-radius: 26px;
-  padding: 26px 30px; box-shadow: 0 10px 40px rgba(106,117,196,.14); }
-.drift { margin: 18px auto 0; font-size: .82em; color: var(--muted); max-width: 40ch; }
-</style><div class=&quot;card&quot;><div class=&quot;whisper&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;cloud&quot;>Camberra</div><div class=&quot;drift&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" data-dark="<style>body{margin:0}.card {
+.strata-settled { padding-top: 22px; }
+.condense { position: relative; margin: 0 auto; max-width: 34ch; background: var(--surface);
+  border-radius: 26px; padding: 26px 30px; box-shadow: 0 12px 44px rgba(106,117,196,.16); }
+.core { font-size: 1.02em; line-height: 1.6; }
+.mist { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 20px auto 0; max-width: 38ch; }
+.mist:empty { display: none; }
+.wisp { font-size: .82em; color: var(--muted); text-align: center; padding: 9px 18px; border-radius: 20px;
+  background: color-mix(in srgb, var(--surface) 55%, transparent); }
+</style><div class=&quot;card&quot;><div class=&quot;strata&quot;><div class=&quot;layer layer-far&quot;></div><div class=&quot;layer layer-near&quot;></div><div class=&quot;crest&quot;><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div></div><hr id=answer><div class=&quot;strata strata-settled&quot;><div class=&quot;layer layer-far&quot;></div><div class=&quot;condense&quot;><div class=&quot;core&quot;>Camberra</div></div></div><div class=&quot;mist&quot;><div class=&quot;wisp&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div></div>" data-dark="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -984,13 +1028,24 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
 }
 .card { --accent: #6a75c4; --surface: #eef0f7; --line: #e6e9f2; }
 .card.nightMode, .card.night_mode { --accent: #aab3e0; --surface: #191c26; --line: #262b3a; }
-.whisper { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 22px; }
+.strata { position: relative; max-width: 42ch; margin: 0 auto; padding: 34px 10px; isolation: isolate; }
+.layer { position: absolute; left: 50%; transform: translateX(-50%); border-radius: 42px;
+  z-index: -1; filter: blur(3px); pointer-events: none; }
+.layer-far { top: 2%; width: 74%; height: 60%;
+  background: radial-gradient(60% 80% at 50% 40%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 72%); }
+.layer-near { top: 16%; width: 98%; height: 74%;
+  background: radial-gradient(72% 92% at 50% 55%, var(--surface), transparent 80%); }
+.crest { position: relative; }
 .prompt { font-size: 1.2em; font-weight: 500; line-height: 1.5; }
-.cloud { margin: 8px auto 0; max-width: 40ch; background: var(--surface); border-radius: 26px;
-  padding: 26px 30px; box-shadow: 0 10px 40px rgba(106,117,196,.14); }
-.drift { margin: 18px auto 0; font-size: .82em; color: var(--muted); max-width: 40ch; }
-</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;whisper&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;cloud&quot;>Camberra</div><div class=&quot;drift&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>" srcdoc="<style>body{margin:0}.card {
+.strata-settled { padding-top: 22px; }
+.condense { position: relative; margin: 0 auto; max-width: 34ch; background: var(--surface);
+  border-radius: 26px; padding: 26px 30px; box-shadow: 0 12px 44px rgba(106,117,196,.16); }
+.core { font-size: 1.02em; line-height: 1.6; }
+.mist { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 20px auto 0; max-width: 38ch; }
+.mist:empty { display: none; }
+.wisp { font-size: .82em; color: var(--muted); text-align: center; padding: 9px 18px; border-radius: 20px;
+  background: color-mix(in srgb, var(--surface) 55%, transparent); }
+</style><div class=&quot;card nightMode night_mode&quot;><div class=&quot;strata&quot;><div class=&quot;layer layer-far&quot;></div><div class=&quot;layer layer-near&quot;></div><div class=&quot;crest&quot;><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div></div><hr id=answer><div class=&quot;strata strata-settled&quot;><div class=&quot;layer layer-far&quot;></div><div class=&quot;condense&quot;><div class=&quot;core&quot;>Camberra</div></div></div><div class=&quot;mist&quot;><div class=&quot;wisp&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div></div>" srcdoc="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;
   --surface: #f5f7fb; --line: #e4e8f0;
@@ -1028,13 +1083,24 @@ hr#answer { border: none; border-top: 1px solid var(--line); margin: var(--pad) 
 }
 .card { --accent: #6a75c4; --surface: #eef0f7; --line: #e6e9f2; }
 .card.nightMode, .card.night_mode { --accent: #aab3e0; --surface: #191c26; --line: #262b3a; }
-.whisper { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 22px; }
+.strata { position: relative; max-width: 42ch; margin: 0 auto; padding: 34px 10px; isolation: isolate; }
+.layer { position: absolute; left: 50%; transform: translateX(-50%); border-radius: 42px;
+  z-index: -1; filter: blur(3px); pointer-events: none; }
+.layer-far { top: 2%; width: 74%; height: 60%;
+  background: radial-gradient(60% 80% at 50% 40%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 72%); }
+.layer-near { top: 16%; width: 98%; height: 74%;
+  background: radial-gradient(72% 92% at 50% 55%, var(--surface), transparent 80%); }
+.crest { position: relative; }
 .prompt { font-size: 1.2em; font-weight: 500; line-height: 1.5; }
-.cloud { margin: 8px auto 0; max-width: 40ch; background: var(--surface); border-radius: 26px;
-  padding: 26px 30px; box-shadow: 0 10px 40px rgba(106,117,196,.14); }
-.drift { margin: 18px auto 0; font-size: .82em; color: var(--muted); max-width: 40ch; }
-</style><div class=&quot;card&quot;><div class=&quot;whisper&quot;>PERGUNTA</div><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div><hr id=answer><div class=&quot;cloud&quot;>Camberra</div><div class=&quot;drift&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div>"></iframe></figure>
+.strata-settled { padding-top: 22px; }
+.condense { position: relative; margin: 0 auto; max-width: 34ch; background: var(--surface);
+  border-radius: 26px; padding: 26px 30px; box-shadow: 0 12px 44px rgba(106,117,196,.16); }
+.core { font-size: 1.02em; line-height: 1.6; }
+.mist { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 20px auto 0; max-width: 38ch; }
+.mist:empty { display: none; }
+.wisp { font-size: .82em; color: var(--muted); text-align: center; padding: 9px 18px; border-radius: 20px;
+  background: color-mix(in srgb, var(--surface) 55%, transparent); }
+</style><div class=&quot;card&quot;><div class=&quot;strata&quot;><div class=&quot;layer layer-far&quot;></div><div class=&quot;layer layer-near&quot;></div><div class=&quot;crest&quot;><div class=&quot;prompt&quot;>Qual é a capital da Austrália?</div></div></div><hr id=answer><div class=&quot;strata strata-settled&quot;><div class=&quot;layer layer-far&quot;></div><div class=&quot;condense&quot;><div class=&quot;core&quot;>Camberra</div></div></div><div class=&quot;mist&quot;><div class=&quot;wisp&quot;>Foi planejada em 1913 como capital de compromisso entre Sydney e Melbourne.</div></div></div>"></iframe></figure>
 <figure class="cell"><figcaption><b>Contraste AAA</b><span>Acessível</span></figcaption><iframe title="Prévia do tema Contraste AAA" loading="lazy" data-light="<style>body{margin:0}.card {
   --fg: #1c2029; --bg: #ffffff;
   --muted: #5b6472; --accent: #3b6ef5;

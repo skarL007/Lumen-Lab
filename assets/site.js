@@ -1,7 +1,6 @@
 (function () {
   "use strict";
 
-  const root = document.documentElement;
   const catalog = window.LUMEN_CATALOG?.addons || [];
   const header = document.querySelector("[data-header]");
   const menuToggle = document.querySelector("[data-menu-toggle]");
@@ -14,21 +13,12 @@
   const clearFilters = document.querySelector("[data-clear-filters]");
   let activeFilter = "all";
 
-  function setTheme(theme, persist) {
-    const safeTheme = theme === "light" ? "light" : "dark";
-    root.dataset.theme = safeTheme;
-    root.style.colorScheme = safeTheme;
-    themeToggle?.setAttribute("aria-label", safeTheme === "dark" ? "Use light theme" : "Use dark theme");
-    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", safeTheme === "dark" ? "#0a0c12" : "#f3f5f9");
-    if (persist) try { localStorage.setItem("lumen-theme", safeTheme); } catch (_) {}
-  }
+  const t = (key) => (window.LumenI18n ? window.LumenI18n.t(key) : "");
+  const fmt = (s, vars) => s.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? "");
+  const ct = (id, field, fallback) => t(`catalog.${id}.${field}`) || fallback;
 
-  function initialTheme() {
-    try {
-      const stored = localStorage.getItem("lumen-theme");
-      if (stored === "light" || stored === "dark") return stored;
-    } catch (_) {}
-    return "dark";
+  function updateThemeLabel(theme) {
+    themeToggle?.setAttribute("aria-label", theme === "dark" ? t("site.themeLight") : t("site.themeDark"));
   }
 
   function element(tag, className, text) {
@@ -66,7 +56,7 @@
     });
     visual.append(svg);
     const stats = element("div", "graph-stats");
-    stats.append(element("span", "", "FSRS · 87%"), element("span", "", "18 mastered tags"));
+    stats.append(element("span", "", t("site.graphStat1")), element("span", "", t("site.graphStat2")));
     visual.append(stats);
     return visual;
   }
@@ -78,16 +68,16 @@
     else {
       artwork = element("div", "module-art module-art-screenshot");
       const image = document.createElement("img");
-      Object.assign(image, { src: module.screenshot, alt: module.screenshotAlt, width: 1327, height: 975, loading: "lazy", decoding: "async" });
-      artwork.append(image, element("span", "module-art-label", "Real interface"));
+      Object.assign(image, { src: module.screenshot, alt: ct(module.id, "screenshotAlt", module.screenshotAlt), width: 1327, height: 975, loading: "lazy", decoding: "async" });
+      artwork.append(image, element("span", "module-art-label", t("site.realInterface")));
     }
     const copy = element("div", "module-copy");
     const meta = element("div", "module-meta");
-    meta.append(element("span", "module-number", module.order), element("span", "module-status", module.status));
-    copy.append(meta, element("p", "module-label", module.label), element("h4", "", module.name), element("p", "module-statement", module.statement), element("p", "module-summary", module.summary));
+    meta.append(element("span", "module-number", module.order), element("span", "module-status", ct(module.id, "status", module.status)));
+    copy.append(meta, element("p", "module-label", ct(module.id, "label", module.label)), element("h4", "", module.name), element("p", "module-statement", ct(module.id, "statement", module.statement)), element("p", "module-summary", ct(module.id, "summary", module.summary)));
     const proof = element("ul", "module-proof");
-    module.proof.forEach((item) => proof.append(element("li", "", item)));
-    const link = element("a", "module-open", `Explore ${module.name}`);
+    module.proof.forEach((item, index) => proof.append(element("li", "", ct(module.id, `proof${index + 1}`, item))));
+    const link = element("a", "module-open", fmt(t("site.explore") || "Explore {name}", { name: module.name }));
     link.href = module.page;
     link.append(element("span", "", "→"));
     copy.append(proof, link);
@@ -95,9 +85,13 @@
     return article;
   }
 
+  function moduleHaystack(module) {
+    return [module.name, ct(module.id, "label", module.label), ct(module.id, "statement", module.statement), ct(module.id, "summary", module.summary), ...module.proof.map((p, i) => ct(module.id, `proof${i + 1}`, p)), module.label, module.statement, module.summary, ...module.proof].join(" ").toLowerCase();
+  }
+
   function productMatches(product, query) {
-    const own = [product.name, product.eyebrow, product.summary, ...product.categories].join(" ").toLowerCase();
-    return !query || own.includes(query) || product.modules.some((module) => [module.name, module.label, module.statement, module.summary, ...module.proof].join(" ").toLowerCase().includes(query));
+    const own = [product.name, product.eyebrow, ct(product.id, "eyebrow", product.eyebrow), product.summary, ct(product.id, "summary", product.summary), ...product.categories].join(" ").toLowerCase();
+    return !query || own.includes(query) || product.modules.some((module) => moduleHaystack(module).includes(query));
   }
 
   function createProduct(product, query) {
@@ -105,37 +99,40 @@
     const article = element("article", "product-card reveal");
     const copy = element("div", "product-copy");
     const meta = element("div", "product-meta");
-    meta.append(element("span", "status-pill", product.status), element("span", "version-pill", `Version ${product.version}`));
-    copy.append(meta, element("p", "product-eyebrow", product.eyebrow), element("h3", "", product.name), element("p", "product-summary", product.summary));
+    meta.append(element("span", "status-pill", ct(product.id, "status", product.status)), element("span", "version-pill", fmt(t("site.version") || "Version {version}", { version: product.version })));
+    copy.append(meta, element("p", "product-eyebrow", ct(product.id, "eyebrow", product.eyebrow)), element("h3", "", product.name), element("p", "product-summary", ct(product.id, "summary", product.summary)));
     const metrics = element("div", "metric-grid");
-    product.metrics.forEach((metric) => { const item = element("div", "metric"); item.append(element("strong", "", metric.value), element("span", "", metric.label)); metrics.append(item); });
+    product.metrics.forEach((metric, index) => { const item = element("div", "metric"); item.append(element("strong", "", metric.value), element("span", "", ct(product.id, `metric${index + 1}`, metric.label))); metrics.append(item); });
     const actions = element("div", "product-actions");
-    const first = element("a", "button button-primary", "Explore Card Template Manager"); first.href = product.modules[0].page;
-    const second = element("a", "button button-secondary", "Explore Tag Mind Map"); second.href = product.modules[1].page;
+    const explore = t("site.explore") || "Explore {name}";
+    const first = element("a", "button button-primary", fmt(explore, { name: product.modules[0].name })); first.href = product.modules[0].page;
+    const second = element("a", "button button-secondary", fmt(explore, { name: product.modules[1].name })); second.href = product.modules[1].page;
     actions.append(first, second); copy.append(metrics, actions);
     const visual = element("div", "product-visual");
     const image = document.createElement("img"); Object.assign(image, { src: product.screenshot, alt: product.screenshotAlt, width: 1327, height: 975, loading: "lazy", decoding: "async" });
-    visual.append(image, element("span", "visual-caption", "Real interface")); article.append(copy, visual); fragment.append(article);
+    visual.append(image, element("span", "visual-caption", t("site.realInterface"))); article.append(copy, visual); fragment.append(article);
 
     const section = element("section", "module-showcase reveal");
     const heading = element("div", "module-section-heading");
-    const headingCopy = element("div"); headingCopy.append(element("p", "product-eyebrow", "The integration"), element("h3", "", "Two tools. One continuous workflow."));
-    heading.append(headingCopy, element("p", "", product.integration)); section.append(heading);
+    const headingCopy = element("div"); headingCopy.append(element("p", "product-eyebrow", t("site.integrationEyebrow")), element("h3", "", t("site.integrationTitle")));
+    heading.append(headingCopy, element("p", "", ct(product.id, "integration", product.integration))); section.append(heading);
     const flow = element("div", "module-flow");
-    [["01","Design the note type"],["02","Organize with tags"],["03","Navigate progress"]].forEach(([n,label], index) => { const step = element("div", "module-flow-step"); step.append(element("span", "", n), element("strong", "", label)); flow.append(step); if (index < 2) flow.append(element("i", "module-flow-line")); });
+    [t("site.flow1"), t("site.flow2"), t("site.flow3")].forEach((label, index) => { const step = element("div", "module-flow-step"); step.append(element("span", "", String(index + 1).padStart(2, "0")), element("strong", "", label)); flow.append(step); if (index < 2) flow.append(element("i", "module-flow-line")); });
     section.append(flow);
     const grid = element("div", "module-grid");
-    product.modules.filter((module) => !query || [module.name,module.label,module.statement,module.summary,...module.proof].join(" ").toLowerCase().includes(query) || product.name.toLowerCase().includes(query)).forEach((module) => grid.append(createModuleCard(module)));
+    product.modules.filter((module) => !query || moduleHaystack(module).includes(query) || product.name.toLowerCase().includes(query)).forEach((module) => grid.append(createModuleCard(module)));
     section.append(grid); fragment.append(section);
     return fragment;
   }
 
-  function renderCatalog() {
+  function renderCatalog(fromLanguageChange) {
     if (!catalogGrid || !emptyState) return;
     const query = (searchInput?.value || "").trim().toLowerCase();
     const visible = catalog.filter((product) => (activeFilter === "all" || product.categories.includes(activeFilter)) && productMatches(product, query));
     const nodes = visible.map((product) => createProduct(product, query));
-    catalogGrid.replaceChildren(...nodes); emptyState.hidden = visible.length !== 0; observeReveals(catalogGrid);
+    catalogGrid.replaceChildren(...nodes); emptyState.hidden = visible.length !== 0;
+    if (fromLanguageChange) catalogGrid.querySelectorAll(".reveal").forEach((item) => item.classList.add("is-visible"));
+    else observeReveals(catalogGrid);
   }
 
   function observeReveals(scope) {
@@ -146,16 +143,20 @@
     items.forEach((item) => observer.observe(item));
   }
 
-  function closeMenu() { nav?.classList.remove("is-open"); menuToggle?.setAttribute("aria-expanded", "false"); menuToggle?.setAttribute("aria-label", "Open menu"); }
+  function closeMenu() { nav?.classList.remove("is-open"); menuToggle?.setAttribute("aria-expanded", "false"); menuToggle?.setAttribute("aria-label", t("site.menuOpen")); }
 
-  setTheme(initialTheme(), false); renderCatalog(); observeReveals(document);
+  window.LumenTheme?.init({ toggle: themeToggle, onChange: updateThemeLabel });
+  renderCatalog(); observeReveals(document);
   document.querySelectorAll("[data-current-year]").forEach((node) => { node.textContent = new Date().getFullYear(); });
   addEventListener("scroll", () => header?.classList.toggle("is-scrolled", scrollY > 20), { passive: true });
-  themeToggle?.addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark", true));
-  menuToggle?.addEventListener("click", () => { const open = !nav?.classList.contains("is-open"); nav?.classList.toggle("is-open", open); menuToggle.setAttribute("aria-expanded", String(open)); menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu"); });
+  menuToggle?.addEventListener("click", () => { const open = !nav?.classList.contains("is-open"); nav?.classList.toggle("is-open", open); menuToggle.setAttribute("aria-expanded", String(open)); menuToggle.setAttribute("aria-label", open ? t("site.menuClose") : t("site.menuOpen")); });
   nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-  searchInput?.addEventListener("input", renderCatalog);
+  searchInput?.addEventListener("input", () => renderCatalog());
   filterList?.addEventListener("click", (event) => { const button = event.target.closest("[data-filter]"); if (!button) return; activeFilter = button.dataset.filter; filterList.querySelectorAll("[data-filter]").forEach((item) => { const active = item === button; item.classList.toggle("is-active", active); item.setAttribute("aria-pressed", String(active)); }); renderCatalog(); });
   clearFilters?.addEventListener("click", () => { activeFilter = "all"; if (searchInput) searchInput.value = ""; filterList?.querySelectorAll("[data-filter]").forEach((item) => { const active = item.dataset.filter === "all"; item.classList.toggle("is-active", active); item.setAttribute("aria-pressed", String(active)); }); renderCatalog(); searchInput?.focus(); });
   document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
+  addEventListener("lumen:languagechange", () => {
+    renderCatalog(true);
+    updateThemeLabel(window.LumenTheme?.current());
+  });
 })();
